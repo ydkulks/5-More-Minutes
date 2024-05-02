@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://msr6uxuna4wu"]
+
+[ext_resource type="Texture2D" uid="uid://cqq17iv70uan1" path="res://Assets/2D Art/Pong/paddle.png" id="1_esgog"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eywtu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d41vx"]
+size = Vector2(8, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Paddle" type="Sprite2D" parent="."]
+texture = ExtResource("1_esgog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eywtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d41vx")

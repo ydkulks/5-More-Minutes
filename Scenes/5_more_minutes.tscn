@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4v2qsieul4j2"]
+
+[ext_resource type="AudioStream" uid="uid://2th70ggn6uyo" path="res://Assets/Audio/Ludum Dare 30 - 07.ogg" id="1_5qo6r"]
+[ext_resource type="PackedScene" uid="uid://3oirhhef1tco" path="res://Scenes/Game/Levels/Pong.tscn" id="2_3n7f6"]
+
+[node name="5 More Minutes" type="Node"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_5qo6r")
+autoplay = true
+
+[node name="Pong" parent="." instance=ExtResource("2_3n7f6")]
