@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3oirhhef1tco"]
+[gd_scene load_steps=14 format=3 uid="uid://3oirhhef1tco"]
 
 [ext_resource type="PackedScene" uid="uid://msr6uxuna4wu" path="res://Scenes/Game/Characters/Pong/paddle.tscn" id="1_3foig"]
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Player.gd" id="2_0qg2f"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pong/ball.gd" id="3_qdwue"]
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pong/ball_collision_logic.gd" id="5_cgjrc"]
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="7_yy80t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jr6g"]
+size = Vector2(10, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbcql"]
 radius = 5.0
@@ -28,6 +31,23 @@ normal = Vector2(1, 0)
 modulate = Color(0, 0.882353, 0, 1)
 position = Vector2(50, 333)
 script = ExtResource("2_0qg2f")
+
+[node name="Center" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Center"]
+shape = SubResource("RectangleShape2D_8jr6g")
+
+[node name="Down" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Down"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_8jr6g")
+
+[node name="Up" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Up"]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_8jr6g")
 
 [node name="AI" parent="." instance=ExtResource("1_3foig")]
 position = Vector2(1100, 333)
@@ -104,4 +124,5 @@ theme_override_fonts/font = ExtResource("7_yy80t")
 theme_override_font_sizes/font_size = 100
 text = "0"
 
+[connection signal="body_entered" from="Player/Center" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Ball/Area2D2" to="Ball/Area2D2" method="_on_body_entered"]
