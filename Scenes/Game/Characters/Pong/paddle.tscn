@@ -1,19 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://msr6uxuna4wu"]
+[gd_scene load_steps=2 format=3 uid="uid://msr6uxuna4wu"]
 
 [ext_resource type="Texture2D" uid="uid://cqq17iv70uan1" path="res://Assets/2D Art/Pong/paddle.png" id="1_esgog"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eywtu"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d41vx"]
-size = Vector2(8, 32)
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(1.8, 2.32)
+metadata/_edit_group_ = true
 
 [node name="Paddle" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_esgog")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_eywtu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_d41vx")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 0.215517)
+scale = Vector2(1, 1.03885)
+polygon = PackedVector2Array(4.44444, 0.207458, 3.33333, -7.32759, 2.77778, -12.5, 0, -15.9483, -2.77778, -12.5, -3.33333, -7.32759, -4.44444, -0.207457, -3.33333, 7.32759, -2.77778, 12.5, 0, 15.9483, 2.77778, 12.5, 3.33333, 7.32759)

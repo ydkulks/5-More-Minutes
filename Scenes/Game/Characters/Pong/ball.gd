@@ -1,19 +1,11 @@
 extends CharacterBody2D
 
-const SPEED = 500.0
+const SPEED = 300.0
 
-#func _physics_process(delta):
-	#var directionx = Input.get_axis("ui_left", "ui_right")
-	#var directiony = Input.get_axis("ui_up", "ui_down")
-	
-	#velocity.x = directionx * SPEED
-	#velocity.y = directiony * SPEED
-	#print(velocity.x, velocity.y)
-	#delta = delta
-	#velocity.x = -0.5 * SPEED
-	#move_and_slide()
+func _ready():
+	velocity.x = -0.005 * SPEED
 
-func _process(delta):
-	delta = delta
-	velocity.x = -0.5 * SPEED
-	move_and_slide()
+func _physics_process(delta):
+	var collision_object = move_and_collide(velocity * SPEED * delta)
+	if collision_object:
+		velocity = velocity.bounce(collision_object.get_normal())

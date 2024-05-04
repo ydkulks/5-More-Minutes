@@ -4,12 +4,10 @@
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Player.gd" id="2_0qg2f"]
 [ext_resource type="PackedScene" uid="uid://do2ydtud6pvod" path="res://Scenes/Game/Characters/Pong/ball.tscn" id="2_1gtun"]
 [ext_resource type="Texture2D" uid="uid://dk5vn0rd1m1xm" path="res://Assets/2D Art/Pong/separator.png" id="2_1jpwc"]
+[ext_resource type="Script" path="res://Scenes/Game/Characters/Pong/AI.gd" id="3_0kf63"]
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pong/ball.gd" id="3_qdwue"]
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pong/ball_collision_logic.gd" id="5_cgjrc"]
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="7_yy80t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jr6g"]
-size = Vector2(10, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbcql"]
 radius = 5.0
@@ -32,30 +30,13 @@ modulate = Color(0, 0.882353, 0, 1)
 position = Vector2(50, 333)
 script = ExtResource("2_0qg2f")
 
-[node name="Center" type="Area2D" parent="Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Center"]
-shape = SubResource("RectangleShape2D_8jr6g")
-
-[node name="Down" type="Area2D" parent="Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Down"]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_8jr6g")
-
-[node name="Up" type="Area2D" parent="Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Up"]
-position = Vector2(0, -11)
-shape = SubResource("RectangleShape2D_8jr6g")
-
 [node name="AI" parent="." instance=ExtResource("1_3foig")]
 position = Vector2(1100, 333)
+script = ExtResource("3_0kf63")
 
 [node name="Ball" parent="." instance=ExtResource("2_1gtun")]
 top_level = true
 position = Vector2(576, 333)
-motion_mode = 1
 script = ExtResource("3_qdwue")
 
 [node name="Area2D2" type="Area2D" parent="Ball"]
@@ -66,6 +47,7 @@ shape = SubResource("CircleShape2D_vbcql")
 
 [node name="Separator" type="Sprite2D" parent="."]
 modulate = Color(0.470588, 0.470588, 0.470588, 1)
+texture_filter = 1
 position = Vector2(575, 323)
 scale = Vector2(1, 1.48)
 texture = ExtResource("2_1jpwc")
@@ -124,5 +106,4 @@ theme_override_fonts/font = ExtResource("7_yy80t")
 theme_override_font_sizes/font_size = 100
 text = "0"
 
-[connection signal="body_entered" from="Player/Center" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Ball/Area2D2" to="Ball/Area2D2" method="_on_body_entered"]

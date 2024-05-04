@@ -1,0 +1,13 @@
+# Todo
+- [ ] Menu
+    - [ ] Title Screen
+        - [ ] Game selectiion menu
+    - [ ] Pause
+    - [ ] Settings
+- [ ] Pong
+    - [x] Background
+    - [x] Player
+    - [x] Score
+    - [x] Ball
+    - [x] AI
+    - [ ] Game Over screen
