@@ -1,9 +1,10 @@
 # Todo
 - [ ] Menu
-    - [ ] Title Screen
-        - [ ] Game selectiion menu
-    - [ ] Pause
+    - [x] Title Screen
+        - [x] Game selection menu
     - [ ] Settings
+    - [x] Audio FX
+        - [x] Hover/Focus
 - [ ] Pong
     - [x] Background
     - [x] Player
@@ -11,3 +12,12 @@
     - [x] Ball
     - [x] AI
     - [ ] Game Over screen
+    - [ ] Pause Menu
+    - [ ] If ball does not collide with paddle for a long time, restart.
+    - [ ] Audio FX
+        - [ ] Background Music
+        - [x] Ball bounce
+        - [x] Score
+        - [ ] Game Over
+            - [ ] Win
+            - [ ] Lose

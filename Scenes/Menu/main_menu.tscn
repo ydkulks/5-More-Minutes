@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5rgxbg5s0pws"]
+
+[ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_3xuj4"]
+[ext_resource type="Texture2D" uid="uid://dii8xfq4mxbm8" path="res://Assets/2D Art/Menu/Space Background (Tile).png" id="1_crdc4"]
+[ext_resource type="Script" path="res://Scenes/Menu/MainMenuBackground.gd" id="1_pnkq5"]
+[ext_resource type="Script" path="res://Scenes/Menu/MainMenuBG(Foreground).gd" id="3_x1ycx"]
+[ext_resource type="Texture2D" uid="uid://bchulfwqrhplv" path="res://Assets/2D Art/Menu/Space Background (Tile foreground).png" id="4_h4wuk"]
+[ext_resource type="Script" path="res://Scenes/Menu/MenuButtons.gd" id="6_l3mq8"]
+[ext_resource type="AudioStream" uid="uid://ctakppq0oro6y" path="res://Assets/Audio/Select 1.wav" id="7_5u0uy"]
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Control"]
+script = ExtResource("1_pnkq5")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Control/ParallaxBackground"]
+motion_mirroring = Vector2(1151, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 323.966)
+scale = Vector2(0.997403, 0.997028)
+texture = ExtResource("1_crdc4")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="Control"]
+script = ExtResource("3_x1ycx")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Control/ParallaxBackground2"]
+motion_mirroring = Vector2(1151, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/ParallaxBackground2/ParallaxLayer"]
+position = Vector2(576, 323.966)
+scale = Vector2(0.997403, 0.997028)
+texture = ExtResource("4_h4wuk")
+
+[node name="Panel" type="Panel" parent="Control"]
+modulate = Color(0.235294, 0.262745, 0.556863, 0.756863)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 1152.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("1_3xuj4")
+theme_override_font_sizes/font_size = 100
+text = "5 More Minuts"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 324.0
+offset_right = 749.0
+offset_bottom = 555.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+script = ExtResource("6_l3mq8")
+
+[node name="OptionButton" type="OptionButton" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3xuj4")
+theme_override_font_sizes/font_size = 50
+alignment = 1
+item_count = 4
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Select Game"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "Pong"
+popup/item_1/id = 1
+popup/item_2/text = "Game2"
+popup/item_2/id = 2
+popup/item_3/text = "Game3"
+popup/item_3/id = 3
+
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3xuj4")
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3xuj4")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="Quit Game" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3xuj4")
+theme_override_font_sizes/font_size = 50
+text = "Quit Game"
+
+[node name="SelectFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5u0uy")
+
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/OptionButton" to="Control/MarginContainer/VBoxContainer" method="_on_option_button_focus_entered"]
+[connection signal="item_selected" from="Control/MarginContainer/VBoxContainer/OptionButton" to="Control/MarginContainer/VBoxContainer" method="_on_option_button_item_selected"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/OptionButton" to="Control/MarginContainer/VBoxContainer" method="_on_option_button_mouse_entered"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/Start" to="Control/MarginContainer/VBoxContainer" method="_on_start_focus_entered"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/Start" to="Control/MarginContainer/VBoxContainer" method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start" to="Control/MarginContainer/VBoxContainer" method="_on_start_pressed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/Settings" to="Control/MarginContainer/VBoxContainer" method="_on_settings_focus_entered"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/Settings" to="Control/MarginContainer/VBoxContainer" method="_on_settings_mouse_entered"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Settings" to="Control/MarginContainer/VBoxContainer" method="_on_settings_pressed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/Quit Game" to="Control/MarginContainer/VBoxContainer" method="_on_quit_game_focus_entered"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/Quit Game" to="Control/MarginContainer/VBoxContainer" method="_on_quit_game_mouse_entered"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Quit Game" to="Control/MarginContainer/VBoxContainer" method="_on_quit_game_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://3oirhhef1tco"]
+[gd_scene load_steps=17 format=3 uid="uid://3oirhhef1tco"]
 
 [ext_resource type="PackedScene" uid="uid://msr6uxuna4wu" path="res://Scenes/Game/Characters/Pong/paddle.tscn" id="1_3foig"]
+[ext_resource type="Texture2D" uid="uid://cyrcopok3cxug" path="res://Assets/2D Art/Menu/Space Background.png" id="1_mda3i"]
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Player.gd" id="2_0qg2f"]
 [ext_resource type="PackedScene" uid="uid://do2ydtud6pvod" path="res://Scenes/Game/Characters/Pong/ball.tscn" id="2_1gtun"]
 [ext_resource type="Texture2D" uid="uid://dk5vn0rd1m1xm" path="res://Assets/2D Art/Pong/separator.png" id="2_1jpwc"]
@@ -8,11 +9,13 @@
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pong/ball.gd" id="3_qdwue"]
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pong/ball_collision_logic.gd" id="5_cgjrc"]
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="7_yy80t"]
+[ext_resource type="AudioStream" uid="uid://dd2k2li2bsq1g" path="res://Assets/Audio/Hit damage 1.wav" id="10_7f53q"]
+[ext_resource type="AudioStream" uid="uid://cff5pup8irujk" path="res://Assets/Audio/Fruit collect 1.wav" id="11_phxng"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s8fq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbcql"]
 radius = 5.0
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_s8fq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4g73"]
 size = Vector2(1174, 44)
@@ -25,8 +28,19 @@ normal = Vector2(1, 0)
 
 [node name="Pong" type="Node2D"]
 
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(526, 374.72)
+rotation = 3.14159
+scale = Vector2(1.21606, 1.21606)
+texture = ExtResource("1_mda3i")
+
+[node name="BackgroundTexture" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.439216)
+position = Vector2(576.5, 326.75)
+scale = Vector2(4.51172, 654.5)
+texture = SubResource("GradientTexture1D_s8fq0")
+
 [node name="Player" parent="." instance=ExtResource("1_3foig")]
-modulate = Color(0, 0.882353, 0, 1)
 position = Vector2(50, 333)
 script = ExtResource("2_0qg2f")
 
@@ -46,18 +60,10 @@ script = ExtResource("5_cgjrc")
 shape = SubResource("CircleShape2D_vbcql")
 
 [node name="Separator" type="Sprite2D" parent="."]
-modulate = Color(0.470588, 0.470588, 0.470588, 1)
 texture_filter = 1
 position = Vector2(575, 323)
 scale = Vector2(1, 1.48)
 texture = ExtResource("2_1jpwc")
-
-[node name="BackgroundTexture" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-show_behind_parent = true
-position = Vector2(576.5, 326.75)
-scale = Vector2(4.51172, 654.5)
-texture = SubResource("GradientTexture1D_s8fq0")
 
 [node name="Background" type="Node" parent="."]
 
@@ -91,7 +97,7 @@ offset_left = 272.0
 offset_top = 288.0
 offset_right = 310.0
 offset_bottom = 368.0
-theme_override_colors/font_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
 theme_override_fonts/font = ExtResource("7_yy80t")
 theme_override_font_sizes/font_size = 100
 text = "0"
@@ -101,9 +107,15 @@ offset_left = 848.0
 offset_top = 288.0
 offset_right = 924.0
 offset_bottom = 368.0
-theme_override_colors/font_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
 theme_override_fonts/font = ExtResource("7_yy80t")
 theme_override_font_sizes/font_size = 100
 text = "0"
+
+[node name="Bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7f53q")
+
+[node name="Score" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_phxng")
 
 [connection signal="body_entered" from="Ball/Area2D2" to="Ball/Area2D2" method="_on_body_entered"]

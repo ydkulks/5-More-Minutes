@@ -6,7 +6,7 @@ const SPEED = 300.0
 func _physics_process(delta):
 	delta = delta
 	position.x = initial_position
-	var Ball = get_node("/root/5 More Minutes/Pong/Ball")
+	var Ball = get_node("/root/Pong/Ball")
 	if Ball.position.y < position.y:
 		velocity.y = -0.5 * SPEED
 	if Ball.position.y > position.y:
