@@ -17,7 +17,7 @@ func _on_body_entered(body):
 	body == get_node("/root/Pong/Background/StaticBody2D4")) :
 		var computer_score = get_node("/root/Pong/ComputerScore")
 		var player_score = get_node("/root/Pong/PlayerScore")
-		var max_score = 5
+		#var max_score = 5
 		# Reset position
 		Ball.position = _initial_pos_ball
 		Ball.velocity.y = 0
@@ -33,7 +33,8 @@ func _on_body_entered(body):
 		get_node("/root/Pong/Score").playing = true
 		
 		# Reset score
-		if ( int(computer_score.text) >= max_score or int(player_score.text) >= max_score ):
-			print("Game Over")
-			computer_score.set("text", 0)
-			player_score.set("text", 0)
+		#if ( int(computer_score.text) >= max_score or int(player_score.text) >= max_score ):
+			#get_tree().paused = true
+			#get_node("/root/Pong/GameOver").visible = true
+			#computer_score.set("text", 0)
+			#player_score.set("text", 0)

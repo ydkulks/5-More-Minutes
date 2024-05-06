@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://3oirhhef1tco"]
+[gd_scene load_steps=21 format=3 uid="uid://3oirhhef1tco"]
 
 [ext_resource type="PackedScene" uid="uid://msr6uxuna4wu" path="res://Scenes/Game/Characters/Pong/paddle.tscn" id="1_3foig"]
+[ext_resource type="Script" path="res://Scenes/Game/Levels/Pong.gd" id="1_esovx"]
 [ext_resource type="Texture2D" uid="uid://cyrcopok3cxug" path="res://Assets/2D Art/Menu/Space Background.png" id="1_mda3i"]
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Player.gd" id="2_0qg2f"]
 [ext_resource type="PackedScene" uid="uid://do2ydtud6pvod" path="res://Scenes/Game/Characters/Pong/ball.tscn" id="2_1gtun"]
@@ -11,6 +12,9 @@
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="7_yy80t"]
 [ext_resource type="AudioStream" uid="uid://dd2k2li2bsq1g" path="res://Assets/Audio/Hit damage 1.wav" id="10_7f53q"]
 [ext_resource type="AudioStream" uid="uid://cff5pup8irujk" path="res://Assets/Audio/Fruit collect 1.wav" id="11_phxng"]
+[ext_resource type="AudioStream" uid="uid://oe6qvfuycth7" path="res://Assets/Audio/VGMA Challenge - 16.ogg" id="12_1wjh2"]
+[ext_resource type="PackedScene" uid="uid://c5qra4gg2s7ru" path="res://Scenes/Menu/game_over.tscn" id="13_j8tc7"]
+[ext_resource type="PackedScene" uid="uid://c6nwil2bg6nb0" path="res://Scenes/Menu/pause_menu.tscn" id="15_t4eyh"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_s8fq0"]
 
@@ -27,6 +31,7 @@ normal = Vector2(0.445004, -0.895528)
 normal = Vector2(1, 0)
 
 [node name="Pong" type="Node2D"]
+script = ExtResource("1_esovx")
 
 [node name="SpaceBackground" type="Sprite2D" parent="."]
 position = Vector2(526, 374.72)
@@ -118,4 +123,18 @@ stream = ExtResource("10_7f53q")
 [node name="Score" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_phxng")
 
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_1wjh2")
+autoplay = true
+
+[node name="GameOver" parent="." instance=ExtResource("13_j8tc7")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("15_t4eyh")]
+
+[node name="5m" type="Timer" parent="."]
+process_callback = 0
+wait_time = 300.0
+autostart = true
+
 [connection signal="body_entered" from="Ball/Area2D2" to="Ball/Area2D2" method="_on_body_entered"]
+[connection signal="timeout" from="5m" to="." method="_on_timer_timeout"]

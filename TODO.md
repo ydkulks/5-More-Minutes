@@ -3,6 +3,7 @@
     - [x] Title Screen
         - [x] Game selection menu
     - [ ] Settings
+    - [ ] Controls tutorial
     - [x] Audio FX
         - [x] Hover/Focus
 - [ ] Pong
@@ -11,13 +12,12 @@
     - [x] Score
     - [x] Ball
     - [x] AI
-    - [ ] Game Over screen
-    - [ ] Pause Menu
-    - [ ] If ball does not collide with paddle for a long time, restart.
-    - [ ] Audio FX
-        - [ ] Background Music
+    - [x] Game Over screen
+    - [x] Pause Menu
+    - [x] End the game after 5m
+    - [ ] Add countdown timer UI
+    - [ ] Save the highscore scored within 5m
+    - [x] Audio FX
+        - [x] Background Music
         - [x] Ball bounce
         - [x] Score
-        - [ ] Game Over
-            - [ ] Win
-            - [ ] Lose
