@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://3oirhhef1tco"]
+[gd_scene load_steps=22 format=3 uid="uid://3oirhhef1tco"]
 
 [ext_resource type="PackedScene" uid="uid://msr6uxuna4wu" path="res://Scenes/Game/Characters/Pong/paddle.tscn" id="1_3foig"]
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Pong.gd" id="1_esovx"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://oe6qvfuycth7" path="res://Assets/Audio/VGMA Challenge - 16.ogg" id="12_1wjh2"]
 [ext_resource type="PackedScene" uid="uid://c5qra4gg2s7ru" path="res://Scenes/Menu/game_over.tscn" id="13_j8tc7"]
 [ext_resource type="PackedScene" uid="uid://c6nwil2bg6nb0" path="res://Scenes/Menu/pause_menu.tscn" id="15_t4eyh"]
+[ext_resource type="PackedScene" uid="uid://b4xrmayq52a0d" path="res://Scenes/Menu/countdown.tscn" id="16_00dw4"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_s8fq0"]
 
@@ -66,8 +67,8 @@ shape = SubResource("CircleShape2D_vbcql")
 
 [node name="Separator" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(575, 323)
-scale = Vector2(1, 1.48)
+position = Vector2(575, 344)
+scale = Vector2(1, 1.375)
 texture = ExtResource("2_1jpwc")
 
 [node name="Background" type="Node" parent="."]
@@ -130,6 +131,12 @@ autoplay = true
 [node name="GameOver" parent="." instance=ExtResource("13_j8tc7")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("15_t4eyh")]
+
+[node name="Countdown" parent="." instance=ExtResource("16_00dw4")]
+offset_left = 529.0
+offset_top = 27.0
+offset_right = 626.0
+offset_bottom = 69.0
 
 [node name="5m" type="Timer" parent="."]
 process_callback = 0

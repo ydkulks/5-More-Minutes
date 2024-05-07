@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4xrmayq52a0d"]
+
+[ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_cwbvy"]
+[ext_resource type="Script" path="res://Scenes/Menu/countdown.gd" id="1_l7hpb"]
+
+[node name="Countdown" type="Panel"]
+offset_right = 97.0
+offset_bottom = 42.0
+script = ExtResource("1_l7hpb")
+
+[node name="Minutes" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_cwbvy")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 55.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("1_cwbvy")
+theme_override_font_sizes/font_size = 40
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seconds" type="Label" parent="."]
+offset_left = 55.0
+offset_right = 89.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_cwbvy")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1

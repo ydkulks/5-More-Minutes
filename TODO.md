@@ -15,7 +15,7 @@
     - [x] Game Over screen
     - [x] Pause Menu
     - [x] End the game after 5m
-    - [ ] Add countdown timer UI
+    - [x] Add countdown timer UI
     - [ ] Save the highscore scored within 5m
     - [x] Audio FX
         - [x] Background Music
