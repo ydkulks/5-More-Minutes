@@ -31,10 +31,3 @@ func _on_body_entered(body):
 			Ball.velocity.x = -0.005 * 300.0
 		
 		get_node("/root/Pong/Score").playing = true
-		
-		# Reset score
-		#if ( int(computer_score.text) >= max_score or int(player_score.text) >= max_score ):
-			#get_tree().paused = true
-			#get_node("/root/Pong/GameOver").visible = true
-			#computer_score.set("text", 0)
-			#player_score.set("text", 0)

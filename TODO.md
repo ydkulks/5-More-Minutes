@@ -6,7 +6,7 @@
     - [ ] Controls tutorial
     - [x] Audio FX
         - [x] Hover/Focus
-- [ ] Pong
+- [x] Pong
     - [x] Background
     - [x] Player
     - [x] Score
@@ -16,7 +16,7 @@
     - [x] Pause Menu
     - [x] End the game after 5m
     - [x] Add countdown timer UI
-    - [ ] Save the highscore scored within 5m
+    - [x] Save the highscore scored within 5m
     - [x] Audio FX
         - [x] Background Music
         - [x] Ball bounce

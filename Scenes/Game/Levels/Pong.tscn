@@ -19,9 +19,6 @@
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_s8fq0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vbcql"]
-radius = 5.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4g73"]
 size = Vector2(1174, 44)
 
@@ -30,6 +27,9 @@ normal = Vector2(0.445004, -0.895528)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vbesr"]
 normal = Vector2(1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbcql"]
+radius = 5.0
 
 [node name="Pong" type="Node2D"]
 script = ExtResource("1_esovx")
@@ -46,32 +46,13 @@ position = Vector2(576.5, 326.75)
 scale = Vector2(4.51172, 654.5)
 texture = SubResource("GradientTexture1D_s8fq0")
 
-[node name="Player" parent="." instance=ExtResource("1_3foig")]
-position = Vector2(50, 333)
-script = ExtResource("2_0qg2f")
+[node name="Background" type="Node" parent="."]
 
-[node name="AI" parent="." instance=ExtResource("1_3foig")]
-position = Vector2(1100, 333)
-script = ExtResource("3_0kf63")
-
-[node name="Ball" parent="." instance=ExtResource("2_1gtun")]
-top_level = true
-position = Vector2(576, 333)
-script = ExtResource("3_qdwue")
-
-[node name="Area2D2" type="Area2D" parent="Ball"]
-script = ExtResource("5_cgjrc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/Area2D2"]
-shape = SubResource("CircleShape2D_vbcql")
-
-[node name="Separator" type="Sprite2D" parent="."]
+[node name="Separator" type="Sprite2D" parent="Background"]
 texture_filter = 1
 position = Vector2(575, 344)
 scale = Vector2(1, 1.375)
 texture = ExtResource("2_1jpwc")
-
-[node name="Background" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 
@@ -98,10 +79,29 @@ shape = SubResource("WorldBoundaryShape2D_i4w21")
 position = Vector2(-31, 332)
 shape = SubResource("WorldBoundaryShape2D_vbesr")
 
+[node name="Player" parent="." instance=ExtResource("1_3foig")]
+position = Vector2(50, 333)
+script = ExtResource("2_0qg2f")
+
+[node name="AI" parent="." instance=ExtResource("1_3foig")]
+position = Vector2(1100, 333)
+script = ExtResource("3_0kf63")
+
+[node name="Ball" parent="." instance=ExtResource("2_1gtun")]
+top_level = true
+position = Vector2(576, 333)
+script = ExtResource("3_qdwue")
+
+[node name="Area2D2" type="Area2D" parent="Ball"]
+script = ExtResource("5_cgjrc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/Area2D2"]
+shape = SubResource("CircleShape2D_vbcql")
+
 [node name="PlayerScore" type="Label" parent="."]
 offset_left = 272.0
 offset_top = 288.0
-offset_right = 310.0
+offset_right = 342.0
 offset_bottom = 368.0
 theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
 theme_override_fonts/font = ExtResource("7_yy80t")

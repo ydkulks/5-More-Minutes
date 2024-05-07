@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_1dedy"]
 [ext_resource type="Script" path="res://Scenes/Menu/game_over.gd" id="1_ssvox"]
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="GameOver" type="CanvasLayer" groups=["Persist"]]
 process_mode = 2
 visible = false
 script = ExtResource("1_ssvox")
@@ -37,13 +37,14 @@ vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 196.0
+offset_left = 129.0
 offset_top = 117.0
-offset_right = 262.0
+offset_right = 329.0
 offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("1_1dedy")
 theme_override_font_sizes/font_size = 30
 text = "Scored:"
+horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="Control"]
 layout_mode = 0
