@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5rgxbg5s0pws"]
+[gd_scene load_steps=9 format=3 uid="uid://c5rgxbg5s0pws"]
 
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_3xuj4"]
 [ext_resource type="Texture2D" uid="uid://dii8xfq4mxbm8" path="res://Assets/2D Art/Menu/Space Background (Tile).png" id="1_crdc4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bchulfwqrhplv" path="res://Assets/2D Art/Menu/Space Background (Tile foreground).png" id="4_h4wuk"]
 [ext_resource type="Script" path="res://Scenes/Menu/MenuButtons.gd" id="6_l3mq8"]
 [ext_resource type="AudioStream" uid="uid://ctakppq0oro6y" path="res://Assets/Audio/Select 1.wav" id="7_5u0uy"]
+[ext_resource type="Theme" uid="uid://crpwwkv86fwfa" path="res://button_theme.tres" id="7_tal2y"]
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -56,19 +57,19 @@ horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
-offset_left = 375.0
+offset_left = 419.0
 offset_top = 324.0
-offset_right = 749.0
+offset_right = 705.0
 offset_bottom = 555.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
+alignment = 1
 script = ExtResource("6_l3mq8")
 
 [node name="OptionButton" type="OptionButton" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_3xuj4")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("7_tal2y")
 alignment = 1
 item_count = 4
 selected = 0
@@ -85,20 +86,17 @@ popup/item_3/id = 3
 
 [node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_3xuj4")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("7_tal2y")
 text = "Start Game"
 
 [node name="Settings" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_3xuj4")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("7_tal2y")
 text = "Settings"
 
 [node name="Quit Game" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_3xuj4")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("7_tal2y")
 text = "Quit Game"
 
 [node name="SelectFX" type="AudioStreamPlayer" parent="."]

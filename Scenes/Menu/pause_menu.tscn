@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6nwil2bg6nb0"]
+[gd_scene load_steps=6 format=3 uid="uid://c6nwil2bg6nb0"]
 
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_6keic"]
 [ext_resource type="Script" path="res://Scenes/Menu/pause_menu.gd" id="1_p6p16"]
+[ext_resource type="Theme" uid="uid://crpwwkv86fwfa" path="res://button_theme.tres" id="3_m28jq"]
 [ext_resource type="AudioStream" uid="uid://2th70ggn6uyo" path="res://Assets/Audio/Ludum Dare 30 - 07.ogg" id="3_ve4hk"]
 [ext_resource type="AudioStream" uid="uid://ctakppq0oro6y" path="res://Assets/Audio/Select 1.wav" id="4_mca6o"]
 
@@ -34,9 +35,9 @@ vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
-offset_left = 271.0
+offset_left = 429.0
 offset_top = 260.0
-offset_right = 899.0
+offset_right = 741.0
 offset_bottom = 572.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
@@ -45,25 +46,22 @@ alignment = 1
 
 [node name="Resume" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_6keic")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("3_m28jq")
 text = "Resume"
 
 [node name="Settings" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_6keic")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("3_m28jq")
 text = "Settings"
 
 [node name="Tutorial" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_6keic")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("3_m28jq")
 text = "Tutorial"
 
 [node name="Exit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_6keic")
+theme = ExtResource("3_m28jq")
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 

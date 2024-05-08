@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://crpwwkv86fwfa"]
+
+[ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_ceb4w"]
+[ext_resource type="Texture2D" uid="uid://bf7hrxawjnapo" path="res://Assets/2D Art/Menu/1-bit_UI_byBatuhanK.png" id="2_unuyf"]
+[ext_resource type="Texture2D" uid="uid://c3y1kiwl2cn8j" path="res://Assets/2D Art/Menu/1-bit_UI_Options.png" id="3_f68a4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jtgts"]
+texture = ExtResource("2_unuyf")
+region_rect = Rect2(96, 83, 39, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kj2br"]
+texture = ExtResource("2_unuyf")
+region_rect = Rect2(96, 83, 39, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2rrur"]
+texture = ExtResource("2_unuyf")
+region_rect = Rect2(95, 82, 41, 16)
+
+[resource]
+Button/colors/font_hover_color = Color(0.466667, 0.466667, 0.466667, 1)
+Button/colors/font_pressed_color = Color(0.466667, 0.466667, 0.466667, 1)
+Button/constants/h_separation = 5
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_ceb4w")
+Button/styles/hover = SubResource("StyleBoxTexture_jtgts")
+Button/styles/normal = SubResource("StyleBoxTexture_kj2br")
+Button/styles/pressed = SubResource("StyleBoxTexture_2rrur")
+OptionButton/constants/arrow_margin = 20
+OptionButton/icons/arrow = ExtResource("3_f68a4")

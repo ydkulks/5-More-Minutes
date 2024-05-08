@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdt7754p2ayqp"
-path="res://.godot/imported/Pxiel Art UI borders.png-7a3e86bcfa7110f5de613ab76e51fb87.ctex"
+uid="uid://c3y1kiwl2cn8j"
+path="res://.godot/imported/1-bit_UI_Options.png-afe9d9c3860756cc6ed5817252f630fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/2D Art/Menu/Pxiel Art UI borders.png"
-dest_files=["res://.godot/imported/Pxiel Art UI borders.png-7a3e86bcfa7110f5de613ab76e51fb87.ctex"]
+source_file="res://Assets/2D Art/Menu/1-bit_UI_Options.png"
+dest_files=["res://.godot/imported/1-bit_UI_Options.png-afe9d9c3860756cc6ed5817252f630fa.ctex"]
 
 [params]
 
