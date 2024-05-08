@@ -30,3 +30,20 @@ func save():
 			}
 	}
 	return save_dict
+
+# Select FX
+
+func _on_play_again_focus_entered():
+	get_node("SelectFX").playing = true
+
+
+func _on_play_again_mouse_entered():
+	get_node("SelectFX").playing = true
+
+
+func _on_exit_focus_entered():
+	get_node("SelectFX").playing = true
+
+
+func _on_exit_mouse_entered():
+	get_node("SelectFX").playing = true

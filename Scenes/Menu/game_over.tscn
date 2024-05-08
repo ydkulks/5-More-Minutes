@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5qra4gg2s7ru"]
+[gd_scene load_steps=4 format=3 uid="uid://c5qra4gg2s7ru"]
 
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_1dedy"]
 [ext_resource type="Script" path="res://Scenes/Menu/game_over.gd" id="1_ssvox"]
+[ext_resource type="AudioStream" uid="uid://ctakppq0oro6y" path="res://Assets/Audio/Select 1.wav" id="3_rojgr"]
 
 [node name="GameOver" type="CanvasLayer" groups=["Persist"]]
 process_mode = 2
@@ -81,6 +82,13 @@ theme_override_fonts/font = ExtResource("1_1dedy")
 theme_override_font_sizes/font_size = 50
 text = "Exit "
 
+[node name="SelectFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rojgr")
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/PlayAgain" to="." method="_on_play_again_focus_entered"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/PlayAgain" to="." method="_on_play_again_mouse_entered"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
