@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqevkby2d0e3k"
-path="res://.godot/imported/map.jpg-6b746eb43add868509964f01f2df9a22.ctex"
+uid="uid://bwccn4n82ogtw"
+path="res://.godot/imported/spr_ghost_pink_0.png-ebbb5a3847892ddbdf0486ef4020d27a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/2D Art/Pack-man/map.jpg"
-dest_files=["res://.godot/imported/map.jpg-6b746eb43add868509964f01f2df9a22.ctex"]
+source_file="res://Assets/2D Art/Pack-man/ghost/pink ghost/spr_ghost_pink_0.png"
+dest_files=["res://.godot/imported/spr_ghost_pink_0.png-ebbb5a3847892ddbdf0486ef4020d27a.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+"""
 const SPEED = 100.0
 @onready var anim = get_node("AnimatedSprite2D")
 
@@ -22,3 +22,4 @@ func _physics_process(_delta):
 			anim.play("up")
 
 	move_and_slide()
+"""

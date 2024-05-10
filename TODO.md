@@ -21,9 +21,10 @@
         - [x] Background Music
         - [x] Ball bounce
         - [x] Score
-- [ ] Packman
-    - [ ] Packman(Player)
-    - [ ] Map
+- [ ] Pac-kman
+    - [x] Pack-man(Player)
+    - [x] Map
+        - [x] Teleportration
     - [ ] Enemies
     - [ ] Collectables
 - [ ] Space Invaders
