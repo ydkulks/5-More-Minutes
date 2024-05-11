@@ -26,5 +26,8 @@
     - [x] Map
         - [x] Teleportration
     - [ ] Enemies
+        - [x] Chase
+        - [ ] Scatter
+        - [ ] Frightened
     - [ ] Collectables
 - [ ] Space Invaders

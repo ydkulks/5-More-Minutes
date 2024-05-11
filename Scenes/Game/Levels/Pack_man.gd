@@ -6,3 +6,4 @@ func _input(event):
 		if not get_tree().paused:
 			get_node("/root/Pack-man/PauseMenu").visible = true
 			get_tree().paused = true
+ 
