@@ -1,3 +1,6 @@
+<!-- BUG: Unintended save over-rides
+     Old saves are getting replaced completely instead of getting updated
+-->
 # Todo
 - [ ] Menu
     - [x] Title Screen
@@ -6,6 +9,7 @@
     - [ ] Controls tutorial
     - [x] Audio FX
         - [x] Hover/Focus
+- [x] Save
 - [x] Pong
     - [x] Background
     - [x] Player
@@ -23,11 +27,21 @@
         - [x] Score
 - [ ] Pac-kman
     - [x] Pack-man(Player)
+        - [ ] 3 lives (HUD)
+        - [x] Death
+            - [x] Reset (2 times)
+            - [x] Death (Game Over)
+            - [ ] Death (Animationi)
     - [x] Map
         - [x] Teleportration
     - [ ] Enemies
         - [x] Chase
-        - [ ] Scatter
-        - [ ] Frightened
-    - [ ] Collectables
+        - [x] Scatter
+        - [ ] Frightened (Only after eating energizer)
+    - [ ] Collectibles
+        - [ ] Energizer
+        - [ ] Pill
+        - [ ] Power Pill
+        - [ ] Energizer (HUD)
+    - [ ] Score
 - [ ] Space Invaders

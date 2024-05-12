@@ -1,7 +1,17 @@
 extends CharacterBody2D
 
 const SPEED = 100.0
+@export var red_enemy:CharacterBody2D
+@export var pink_enemy:CharacterBody2D
+@export var orange_enemy:CharacterBody2D
+@export var blue_enemy:CharacterBody2D
 @onready var anim = get_node("AnimatedSprite2D")
+@onready var initial_position = position
+@onready var red_pos = red_enemy.position
+@onready var orange_pos = orange_enemy.position
+@onready var pink_pos = pink_enemy.position
+@onready var blue_pos = blue_enemy.position
+var lives = 3
 
 func _physics_process(_delta):
 	var direction_x = Input.get_axis("WASD-left", "WASD-right")
@@ -22,3 +32,16 @@ func _physics_process(_delta):
 			anim.play("up")
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if body==red_enemy || body==pink_enemy || body==orange_enemy || body==blue_enemy:
+		position = initial_position
+		red_enemy.position = red_pos
+		pink_enemy.position = pink_pos
+		orange_enemy.position = orange_pos
+		blue_enemy.position = blue_pos
+		lives = lives - 1
+		if lives <= 0:
+			get_tree().paused = true
+			get_node("/root/Pack-man/GameOver").visible = true

@@ -19,9 +19,9 @@ func _on_timer_timeout():
 	if current_mode == MODE.CHASE:
 		nav_agent.target_position = player.global_position
 	elif current_mode == MODE.SCATTER:
-		nav_agent.target_position = Vector2(323.1612, 50.82834)
+		nav_agent.target_position = Vector2(58.38561, 195.004)
 		if nav_agent.is_navigation_finished():
-			nav_agent.target_position = Vector2(367.0758, 67.00111)
+			nav_agent.target_position = Vector2(331.4718, 206.2424)
 	else :
 		nav_agent.target_position = Vector2(0,0)
 

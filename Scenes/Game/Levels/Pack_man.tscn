@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://8ah5k4baybhm"]
+[gd_scene load_steps=46 format=3 uid="uid://8ah5k4baybhm"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Pack_man.gd" id="1_11y2p"]
 [ext_resource type="Texture2D" uid="uid://bcndu040atdn1" path="res://Assets/2D Art/Pack-man/background1.png" id="2_7v68f"]
@@ -7,7 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://cuge5y2luo3k4" path="res://Assets/2D Art/Pack-man/background2.png" id="3_fonl2"]
 [ext_resource type="Script" path="res://Scenes/Game/Levels/TP.gd" id="4_cfeea"]
 [ext_resource type="Texture2D" uid="uid://cqq17iv70uan1" path="res://Assets/2D Art/Pong/paddle.png" id="6_c3elk"]
+[ext_resource type="PackedScene" uid="uid://c5qra4gg2s7ru" path="res://Scenes/Menu/game_over.tscn" id="7_v6f4n"]
 [ext_resource type="PackedScene" uid="uid://c4qh6ysgn072b" path="res://Scenes/Game/Characters/Pack-man/red.tscn" id="8_7bb8x"]
+[ext_resource type="PackedScene" uid="uid://b4xrmayq52a0d" path="res://Scenes/Menu/countdown.tscn" id="9_1a23h"]
+[ext_resource type="PackedScene" uid="uid://dp24vnipwqrwq" path="res://Scenes/Game/Characters/Pack-man/pink.tscn" id="9_g4bm7"]
+[ext_resource type="PackedScene" uid="uid://co8ecq3btsesh" path="res://Scenes/Game/Characters/Pack-man/orange.tscn" id="10_0b1h6"]
+[ext_resource type="PackedScene" uid="uid://b4u01ei3vsh60" path="res://Scenes/Game/Characters/Pack-man/blue.tscn" id="11_gsw7c"]
+[ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="14_vighe"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_utdeg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -456,6 +462,7 @@ size = Vector2(20, 40)
 size = Vector2(32, 4)
 
 [node name="Pack-man" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_11y2p")
 
 [node name="BG" type="TileMap" parent="."]
@@ -489,10 +496,16 @@ shape = SubResource("RectangleShape2D_v8mi6")
 position = Vector2(226, 125)
 zoom = Vector2(2.6, 2.6)
 
-[node name="Pack-man" parent="." instance=ExtResource("2_ttegw")]
+[node name="Pack-man" parent="." node_paths=PackedStringArray("red_enemy", "pink_enemy", "orange_enemy", "blue_enemy") instance=ExtResource("2_ttegw")]
 position = Vector2(224, 230)
+red_enemy = NodePath("../Red")
+pink_enemy = NodePath("../Pink")
+orange_enemy = NodePath("../Orange")
+blue_enemy = NodePath("../Blue")
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_60h3f")]
+
+[node name="GameOver" parent="." instance=ExtResource("7_v6f4n")]
 
 [node name="GhostHouseDoor" type="StaticBody2D" parent="."]
 position = Vector2(220, 134)
@@ -509,8 +522,48 @@ shape = SubResource("RectangleShape2D_v7oq3")
 one_way_collision = true
 
 [node name="Red" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_7bb8x")]
-position = Vector2(243, 144)
+position = Vector2(224, 122)
 player = NodePath("../Pack-man")
+
+[node name="Pink" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_g4bm7")]
+position = Vector2(203, 144)
+player = NodePath("../Pack-man")
+
+[node name="Orange" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_0b1h6")]
+position = Vector2(245, 144)
+player = NodePath("../Pack-man")
+
+[node name="Blue" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_gsw7c")]
+position = Vector2(224, 144)
+player = NodePath("../Pack-man")
+
+[node name="Countdown" parent="." instance=ExtResource("9_1a23h")]
+offset_left = 180.0
+offset_top = -3.0
+offset_right = 277.0
+offset_bottom = 39.0
+
+[node name="PlayerScore" type="Label" parent="."]
+visible = false
+offset_left = 272.0
+offset_top = 288.0
+offset_right = 342.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("14_vighe")
+theme_override_font_sizes/font_size = 100
+text = "1"
+
+[node name="ComputerScore" type="Label" parent="."]
+visible = false
+offset_left = 848.0
+offset_top = 288.0
+offset_right = 924.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("14_vighe")
+theme_override_font_sizes/font_size = 100
+text = "0"
 
 [connection signal="body_entered" from="Left TP" to="Left TP" method="_on_body_entered"]
 [connection signal="body_entered" from="Right TP" to="Left TP" method="_on_right_tp_body_entered"]

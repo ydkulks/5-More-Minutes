@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4qh6ysgn072b"]
+[gd_scene load_steps=4 format=3 uid="uid://dp24vnipwqrwq"]
 
-[ext_resource type="Script" path="res://Scenes/Game/Characters/Pack-man/red.gd" id="1_lakwx"]
-[ext_resource type="Texture2D" uid="uid://cjkqwcp0oa3y6" path="res://Assets/2D Art/Pack-man/ghost/red ghost/spr_ghost_red_0.png" id="2_sbdeu"]
+[ext_resource type="Script" path="res://Scenes/Game/Characters/Pack-man/pink.gd" id="1_7u7v8"]
+[ext_resource type="Texture2D" uid="uid://bwccn4n82ogtw" path="res://Assets/2D Art/Pack-man/ghost/pink ghost/spr_ghost_pink_0.png" id="1_cmka7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nixcf"]
 radius = 7.0
 
-[node name="Red" type="CharacterBody2D"]
+[node name="Pink" type="CharacterBody2D"]
 position = Vector2(224, 227)
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_lakwx")
+script = ExtResource("1_7u7v8")
 
-[node name="SprGhostRed0" type="Sprite2D" parent="."]
+[node name="SprGhostPink0" type="Sprite2D" parent="."]
 position = Vector2(0, -5.96046e-08)
 scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("2_sbdeu")
+texture = ExtResource("1_cmka7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nixcf")
