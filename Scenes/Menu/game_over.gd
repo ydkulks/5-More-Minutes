@@ -1,11 +1,12 @@
 extends CanvasLayer
 
-@onready var level = get_tree().current_scene
+@onready var level:String = get_tree().current_scene.get_path()
+var old_save = GlobalScript.load_game()
 
 func _ready():
-	if level == get_node("/root/Pong"):
+	if level == "/root/Pong":
 		level = "pong"
-	else:
+	elif level == "/root/Pack-man":
 		level = "packman"
 
 func _on_play_again_pressed():
@@ -26,11 +27,11 @@ func _on_visibility_changed():
 	
 	# Call global save function when player wins and beat their highscore
 	if int(player.text) > int(computer.text):
-		var highscore = GlobalScript.load_game()
-		if highscore == null:
+		#var highscore = GlobalScript.load_game()
+		if old_save == null:
 			GlobalScript.save_game()
-		elif highscore["scores"].has("level"):
-			if int(highscore["scores"][level]["player_score"]) < int(player.text):
+		elif old_save["scores"].has("level"):
+			if int(old_save["scores"][level]["player_score"]) < int(player.text):
 				get_node("Control/ScoreLabel").set("text","New High Score!:")
 				GlobalScript.save_game()
 		else:
@@ -38,13 +39,19 @@ func _on_visibility_changed():
 			GlobalScript.save_game()
 
 func save():
-	var save_dict = {
-		"scores":{
-		level : {
-			"player_score" : int(get_node("Control/Score").text)
+	var save_dict
+	if old_save == null:
+		save_dict = {
+			"scores":{
+				"pong" : {"player_score" : 0},
+				"packman" : {"player_score":0},
+				"game3":{"player_score":0}
 			}
 		}
-	}
+		save_dict["scores"][level].player_score = int(get_node("Control/Score").text)
+	else:
+		old_save["scores"][level].player_score = int(get_node("Control/Score").text)
+		save_dict = old_save
 	return save_dict
 
 # Select FX

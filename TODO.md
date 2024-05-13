@@ -1,47 +1,44 @@
-<!-- BUG: Unintended save over-rides
-     Old saves are getting replaced completely instead of getting updated
--->
 # Todo
 - [ ] Menu
-    - [x] Title Screen
-        - [x] Game selection menu
-    - [ ] Settings
-    - [ ] Controls tutorial
-    - [x] Audio FX
-        - [x] Hover/Focus
+	- [x] Title Screen
+		- [x] Game selection menu
+	- [ ] Settings
+	- [ ] Controls tutorial
+	- [x] Audio FX
+		- [x] Hover/Focus
 - [x] Save
 - [x] Pong
-    - [x] Background
-    - [x] Player
-    - [x] Score
-    - [x] Ball
-    - [x] AI
-    - [x] Game Over screen
-    - [x] Pause Menu
-    - [x] End the game after 5m
-    - [x] Add countdown timer UI
-    - [x] Save the highscore scored within 5m
-    - [x] Audio FX
-        - [x] Background Music
-        - [x] Ball bounce
-        - [x] Score
+	- [x] Background
+	- [x] Player
+	- [x] Score
+	- [x] Ball
+	- [x] AI
+	- [x] Game Over screen
+	- [x] Pause Menu
+	- [x] End the game after 5m
+	- [x] Add countdown timer UI
+	- [x] Save the highscore scored within 5m
+	- [x] Audio FX
+		- [x] Background Music
+		- [x] Ball bounce
+		- [x] Score
 - [ ] Pac-kman
-    - [x] Pack-man(Player)
-        - [ ] 3 lives (HUD)
-        - [x] Death
-            - [x] Reset (2 times)
-            - [x] Death (Game Over)
-            - [ ] Death (Animationi)
-    - [x] Map
-        - [x] Teleportration
-    - [ ] Enemies
-        - [x] Chase
-        - [x] Scatter
-        - [ ] Frightened (Only after eating energizer)
-    - [ ] Collectibles
-        - [ ] Energizer
-        - [ ] Pill
-        - [ ] Power Pill
-        - [ ] Energizer (HUD)
-    - [ ] Score
+	- [x] Pack-man(Player)
+		- [ ] 3 lives (HUD)
+		- [x] Death
+			- [x] Reset (2 times)
+			- [x] Death (Game Over)
+			- [ ] Death (Animationi)
+	- [x] Map
+		- [x] Teleportration
+	- [ ] Enemies
+		- [x] Chase
+		- [x] Scatter
+		- [ ] Frightened (Only after eating energizer)
+	- [ ] Collectibles
+		- [ ] Energizer
+		- [ ] Pill
+		- [ ] Power Pill
+		- [ ] Energizer (HUD)
+	- [ ] Score
 - [ ] Space Invaders

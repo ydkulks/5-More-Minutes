@@ -21,12 +21,15 @@ func save_game():
 		save_game_file.store_line(json_string)
 
 func load_game():
+	var data
 	if not FileAccess.file_exists(save_file):
+		print("File do not exists")
 		return null # Error! We don't have a save to load.
 	
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
 	var save_game_file = FileAccess.open(save_file, FileAccess.READ)
+	#return { "scores": { "packman": { "player_score": 1 } } }
 	while save_game_file.get_position() < save_game_file.get_length():
 		var json_string = save_game_file.get_line()
 
@@ -39,6 +42,5 @@ func load_game():
 			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 			continue
 
-		# Get the data from the JSON object
-		var node_data = json.get_data()
-		return node_data
+		data = json.data
+	return data
