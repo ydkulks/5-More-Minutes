@@ -13,6 +13,10 @@ const SPEED = 100.0
 @onready var blue_pos = blue_enemy.position
 var lives = 3
 
+func _ready():
+	get_tree().paused = true
+	get_node("/root/Pack-man/ReadyGo").visible = true
+
 func _physics_process(_delta):
 	var direction_x = Input.get_axis("WASD-left", "WASD-right")
 	var direction_y = Input.get_axis("WASD-up", "WASD-down")
@@ -41,7 +45,19 @@ func _on_area_2d_body_entered(body):
 		pink_enemy.position = pink_pos
 		orange_enemy.position = orange_pos
 		blue_enemy.position = blue_pos
+		# Lives counter
 		lives = lives - 1
+		if lives == 2:
+			get_node("/root/Pack-man/Lives/SprLifecounter2").visible = false
+			# Ready! Go! menu
+			get_tree().paused = true
+			get_node("/root/Pack-man/ReadyGo").visible = true
+		if lives == 1:
+			get_node("/root/Pack-man/Lives/SprLifecounter1").visible = false
+			# Ready! Go! menu
+			get_tree().paused = true
+			get_node("/root/Pack-man/ReadyGo").visible = true
 		if lives <= 0:
+			get_node("/root/Pack-man/Lives/SprLifecounter0").visible = false
 			get_tree().paused = true
 			get_node("/root/Pack-man/GameOver").visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://8ah5k4baybhm"]
+[gd_scene load_steps=48 format=3 uid="uid://8ah5k4baybhm"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Pack_man.gd" id="1_11y2p"]
 [ext_resource type="Texture2D" uid="uid://bcndu040atdn1" path="res://Assets/2D Art/Pack-man/background1.png" id="2_7v68f"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dp24vnipwqrwq" path="res://Scenes/Game/Characters/Pack-man/pink.tscn" id="9_g4bm7"]
 [ext_resource type="PackedScene" uid="uid://co8ecq3btsesh" path="res://Scenes/Game/Characters/Pack-man/orange.tscn" id="10_0b1h6"]
 [ext_resource type="PackedScene" uid="uid://b4u01ei3vsh60" path="res://Scenes/Game/Characters/Pack-man/blue.tscn" id="11_gsw7c"]
+[ext_resource type="PackedScene" uid="uid://xq1tdi644et" path="res://Scenes/Menu/ready_go.tscn" id="14_dgnrj"]
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="14_vighe"]
+[ext_resource type="Texture2D" uid="uid://btb8llwna55wf" path="res://Assets/2D Art/Pack-man/spr_lifecounter_0.png" id="15_ku6wg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_utdeg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -455,11 +457,11 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_d825w")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8mi6"]
-size = Vector2(20, 40)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oq3"]
 size = Vector2(32, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8mi6"]
+size = Vector2(20, 40)
 
 [node name="Pack-man" type="Node2D"]
 process_mode = 1
@@ -476,6 +478,20 @@ position = Vector2(128, 24)
 tile_set = SubResource("TileSet_0bh0e")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 65536, 6, 12, 262144, 2, 851977, 65536, 7, 851976, 262144, 5, 851975, 262144, 5, 851974, 262144, 5, 851973, 262144, 5, 851972, 262144, 5, 851971, 262144, 5, 65530, 0, 6, 917503, 65536, 7, 917502, 262144, 5, 917501, 262144, 5, 917500, 262144, 5, 917499, 262144, 5, 917498, 0, 7, 720890, 131072, 3, 655354, 131072, 3, 589818, 0, 6, 262138, 0, 7, 196602, 131072, 3, 131066, 131072, 3, 13, 262144, 2, 14, 262144, 2, 15, 262144, 2, 393210, 262144, 2, 458746, 262144, 5, 393209, 262144, 2, 458745, 262144, 5, 786427, 262144, 5, 786428, 131072, 7, 786426, 0, 7, 851962, 0, 6, 851963, 262144, 2, 851964, 131072, 6, 720898, 131072, 7, 720897, 262144, 5, 720896, 262144, 5, 720901, 65536, 7, 786437, 262144, 2, 786438, 262144, 2, 786439, 262144, 2, 720900, 262144, 5, 786436, 262144, 2, 524293, 262144, 2, 524294, 262144, 2, 524295, 262144, 2, 524296, 131072, 6, 458760, 131072, 3, 393224, 131072, 7, 393223, 262144, 5, 720908, 131072, 7, 720907, 262144, 5, 720906, 262144, 5, 589835, 65536, 7, 655371, 262144, 2, 655370, 262144, 2, 589834, 262144, 5, 655369, 262144, 2, 589833, 262144, 5, 851967, 327680, 3, 786431, 196608, 7, 786434, 131072, 3, 851970, 0, 7, 786435, 196608, 6, 720899, 196608, 7, 655365, 327680, 3, 589829, 196608, 7, 655362, 262144, 2, 655361, 262144, 2, 655360, 262144, 2, 589826, 262144, 5, 589825, 262144, 5, 589824, 0, 7, 655359, 327680, 3, 720895, 196608, 6, 11, 0, 6, 262150, 131072, 3, 196614, 0, 6, 196613, 65536, 6, 262149, 327680, 3, 327686, 131072, 6, 327685, 196608, 6, 196612, 262144, 2, 196615, 262144, 2, 196611, 196608, 6, 196616, 131072, 6, 131080, 131072, 7, 131075, 196608, 7, 131076, 262144, 5, 131077, 262144, 5, 131078, 262144, 5, 131079, 262144, 5, 524291, 196608, 6, 524292, 262144, 2, 458755, 327680, 3, 393219, 196608, 7, 393220, 262144, 5, 720902, 0, 7, 720904, 131072, 7, 786440, 131072, 6, 720903, 262144, 5, 655366, 131072, 3, 589830, 131072, 7, 786441, 327680, 3, 720905, 196608, 7, 786444, 131072, 3, 851980, 0, 7, 851981, 262144, 5, 589827, 262144, 5, 655363, 262144, 2, 589828, 131072, 7, 655364, 131072, 6, 655367, 196608, 6, 589831, 196608, 7, 589832, 262144, 5, 655368, 262144, 2, 655372, 131072, 6, 589836, 131072, 3, 655355, 196608, 7, 720891, 196608, 6, 655356, 262144, 5, 720892, 262144, 2, 655357, 262144, 5, 720893, 65536, 6, 786429, 327680, 3, 851965, 196608, 6, 655358, 131072, 7, 720894, 131072, 3, 786430, 131072, 3, 851966, 131072, 6, 655374, 0, 6, 720910, 131072, 3, 786446, 131072, 6, 589839, 262144, 5, 655375, 262144, 2, 589840, 131072, 7, 655376, 131072, 6, 655373, 327680, 3, 720909, 327680, 3, 786445, 196608, 6, 589838, 262144, 5, 589837, 196608, 7, 851982, 262144, 5, 720911, 196608, 7, 786447, 196608, 6, 851983, 262144, 5, 16, 262144, 2, 720912, 262144, 5, 786448, 262144, 2, 851984, 262144, 5, 17, 327680, 2, 65553, 327680, 3, 131089, 327680, 3, 196625, 65536, 7, 327697, 262144, 2, 393233, 262144, 5, 524305, 65536, 6, 589841, 327680, 3, 655377, 327680, 3, 720913, 65536, 7, 786449, 65536, 6, 851985, 327680, 5, 327698, 262144, 2, 393234, 262144, 5, 327699, 262144, 2, 393235, 262144, 5, 131073, 196608, 7, 196609, 327680, 3, 262145, 327680, 3, 327681, 327680, 3, 393217, 327680, 3, 458753, 196608, 6, 262146, 0, 7, 327682, 0, 6, 262147, 262144, 5, 327683, 262144, 2, 131074, 131072, 7, 196610, 131072, 3, 393218, 131072, 3, 458754, 131072, 6, 262148, 131072, 7, 327684, 131072, 6, 262152, 262144, 5, 327688, 262144, 2, 262153, 65536, 7, 327689, 65536, 6, 131082, 131072, 7, 196618, 131072, 3, 262154, 131072, 3, 327690, 131072, 3, 393226, 131072, 3, 458762, 131072, 6, 262151, 196608, 7, 327687, 196608, 6, 131081, 196608, 7, 196617, 327680, 3, 393225, 327680, 3, 458761, 196608, 6, 524287, 196608, 7, 589823, 327680, 3, 393208, 262144, 2, 458744, 262144, 5, 196603, 196608, 6, 131068, 262144, 5, 196604, 262144, 2, 131069, 262144, 5, 196605, 262144, 2, 131070, 262144, 5, 196606, 262144, 2, 131071, 131072, 7, 196607, 131072, 6, 131067, 196608, 7, 65548, 196608, 7, 131084, 196608, 6, 65549, 262144, 5, 131085, 262144, 2, 65550, 262144, 5, 131086, 262144, 2, 65551, 262144, 5, 131087, 262144, 2, 65552, 131072, 7, 131088, 131072, 6, 65536, 196608, 6, 65547, 131072, 6, 65531, 262144, 2, 65532, 262144, 2, 65533, 262144, 2, 65534, 262144, 2, 65535, 262144, 2, 65537, 262144, 2, 65538, 262144, 2, 65539, 262144, 2, 65544, 262144, 2, 65545, 262144, 2, 65546, 262144, 2, 65543, 262144, 2, 65540, 262144, 2, 65541, 262144, 2, 65542, 262144, 2, 458752, 131072, 7, 524288, 131072, 3, 262143, 196608, 7, 327679, 327680, 3, 393215, 327680, 3, 458751, 196608, 6, 196608, 131072, 7, 262144, 131072, 3, 327680, 131072, 3, 393216, 131072, 6, 262140, 262144, 5, 393212, 262144, 2, 458748, 262144, 5, 589820, 262144, 2, 262141, 262144, 5, 393213, 262144, 2, 458749, 262144, 5, 589821, 262144, 2, 262142, 131072, 7, 327678, 131072, 3, 393214, 131072, 6, 458750, 131072, 7, 524286, 131072, 3, 589822, 131072, 6, 262156, 131072, 3, 327692, 131072, 3, 393228, 131072, 6, 458764, 131072, 7, 196619, 196608, 7, 262155, 327680, 3, 327691, 327680, 3, 393227, 196608, 6, 458763, 196608, 7, 196620, 131072, 7, 196622, 262144, 5, 327694, 262144, 2, 393230, 262144, 5, 524302, 262144, 2, 196623, 262144, 5, 327695, 262144, 2, 393231, 262144, 5, 524303, 262144, 2, 196621, 196608, 7, 262157, 327680, 3, 327693, 196608, 6, 393229, 196608, 7, 458765, 327680, 3, 524301, 196608, 6, 393211, 262144, 2, 458747, 262144, 5, 327696, 262144, 2, 393232, 262144, 5, 589819, 262144, 2, 524304, 262144, 2, 262139, 262144, 5, 196624, 262144, 5, 524299, 327680, 3, 524300, 131072, 3)
+
+[node name="GhostHouseDoor" type="StaticBody2D" parent="."]
+position = Vector2(220, 134)
+
+[node name="Paddle" type="Sprite2D" parent="GhostHouseDoor"]
+position = Vector2(4, 0)
+rotation = -1.57079
+scale = Vector2(0.351075, 0.986846)
+texture = ExtResource("6_c3elk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHouseDoor"]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_v7oq3")
+one_way_collision = true
 
 [node name="Left TP" type="Area2D" parent="."]
 position = Vector2(128, 24)
@@ -498,61 +514,55 @@ zoom = Vector2(2.6, 2.6)
 
 [node name="Pack-man" parent="." node_paths=PackedStringArray("red_enemy", "pink_enemy", "orange_enemy", "blue_enemy") instance=ExtResource("2_ttegw")]
 position = Vector2(224, 230)
-red_enemy = NodePath("../Red")
-pink_enemy = NodePath("../Pink")
-orange_enemy = NodePath("../Orange")
-blue_enemy = NodePath("../Blue")
+red_enemy = NodePath("../Ghosts/Red")
+pink_enemy = NodePath("../Ghosts/Pink")
+orange_enemy = NodePath("../Ghosts/Orange")
+blue_enemy = NodePath("../Ghosts/Blue")
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_60h3f")]
+[node name="Lives" type="Node2D" parent="."]
 
-[node name="GameOver" parent="." instance=ExtResource("7_v6f4n")]
+[node name="SprLifecounter0" type="Sprite2D" parent="Lives"]
+position = Vector2(345.84, 14.84)
+scale = Vector2(0.479999, 0.479999)
+texture = ExtResource("15_ku6wg")
 
-[node name="GhostHouseDoor" type="StaticBody2D" parent="."]
-position = Vector2(220, 134)
+[node name="SprLifecounter1" type="Sprite2D" parent="Lives"]
+position = Vector2(357.84, 14.84)
+scale = Vector2(0.479999, 0.479999)
+texture = ExtResource("15_ku6wg")
 
-[node name="Paddle" type="Sprite2D" parent="GhostHouseDoor"]
-position = Vector2(4, 0)
-rotation = -1.57079
-scale = Vector2(0.351075, 0.986846)
-texture = ExtResource("6_c3elk")
+[node name="SprLifecounter2" type="Sprite2D" parent="Lives"]
+position = Vector2(369.84, 14.84)
+scale = Vector2(0.479999, 0.479999)
+texture = ExtResource("15_ku6wg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHouseDoor"]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_v7oq3")
-one_way_collision = true
+[node name="Ghosts" type="Node2D" parent="."]
 
-[node name="Red" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_7bb8x")]
+[node name="Red" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("8_7bb8x")]
 position = Vector2(224, 122)
-player = NodePath("../Pack-man")
+player = NodePath("../../Pack-man")
 
-[node name="Pink" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_g4bm7")]
+[node name="Pink" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("9_g4bm7")]
 position = Vector2(203, 144)
-player = NodePath("../Pack-man")
+player = NodePath("../../Pack-man")
 
-[node name="Orange" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_0b1h6")]
+[node name="Orange" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("10_0b1h6")]
 position = Vector2(245, 144)
-player = NodePath("../Pack-man")
+player = NodePath("../../Pack-man")
 
-[node name="Blue" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_gsw7c")]
+[node name="Blue" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("11_gsw7c")]
 position = Vector2(224, 144)
-player = NodePath("../Pack-man")
-
-[node name="Countdown" parent="." instance=ExtResource("9_1a23h")]
-offset_left = 180.0
-offset_top = -3.0
-offset_right = 277.0
-offset_bottom = 39.0
+player = NodePath("../../Pack-man")
 
 [node name="PlayerScore" type="Label" parent="."]
-visible = false
-offset_left = 272.0
-offset_top = 288.0
-offset_right = 342.0
-offset_bottom = 368.0
+offset_left = 50.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
 theme_override_fonts/font = ExtResource("14_vighe")
-theme_override_font_sizes/font_size = 100
-text = "1"
+theme_override_font_sizes/font_size = 20
+text = "0"
 
 [node name="ComputerScore" type="Label" parent="."]
 visible = false
@@ -563,7 +573,19 @@ offset_bottom = 368.0
 theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
 theme_override_fonts/font = ExtResource("14_vighe")
 theme_override_font_sizes/font_size = 100
-text = "-1"
+text = "0"
+
+[node name="Countdown" parent="." instance=ExtResource("9_1a23h")]
+offset_left = 180.0
+offset_top = -3.0
+offset_right = 277.0
+offset_bottom = 39.0
+
+[node name="ReadyGo" parent="." instance=ExtResource("14_dgnrj")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_60h3f")]
+
+[node name="GameOver" parent="." instance=ExtResource("7_v6f4n")]
 
 [connection signal="body_entered" from="Left TP" to="Left TP" method="_on_body_entered"]
 [connection signal="body_entered" from="Right TP" to="Left TP" method="_on_right_tp_body_entered"]

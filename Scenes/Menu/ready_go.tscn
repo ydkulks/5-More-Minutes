@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://xq1tdi644et"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/ready_go.gd" id="1_0hcc8"]
+[ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="1_0wg80"]
+
+[node name="ReadyGo" type="Control"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0hcc8")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 481.0
+offset_bottom = 282.0
+
+[node name="Message" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 110.0
+offset_right = 287.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.929412, 0.886275, 0.054902, 1)
+theme_override_fonts/font = ExtResource("1_0wg80")
+theme_override_font_sizes/font_size = 50
+text = "Ready!"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

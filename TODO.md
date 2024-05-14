@@ -23,12 +23,13 @@
 		- [x] Ball bounce
 		- [x] Score
 - [ ] Pac-kman
+    - [x] Ready-Go pop-up
 	- [x] Pack-man(Player)
-		- [ ] 3 lives (HUD)
+		- [x] 3 lives (HUD)
 		- [x] Death
 			- [x] Reset (2 times)
 			- [x] Death (Game Over)
-			- [ ] Death (Animationi)
+			- [ ] Death (Animation)
 	- [x] Map
 		- [x] Teleportration
 	- [ ] Enemies
