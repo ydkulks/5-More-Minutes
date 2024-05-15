@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ymcl8mylbrrn"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Characters/Pack-man/pill.gd" id="1_dg11o"]
+[ext_resource type="Texture2D" uid="uid://4rtlwv4i358o" path="res://Assets/2D Art/Pack-man/pill/spr_pill_0.png" id="1_wk3i3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bay6c"]
+radius = 7.0
+
+[node name="Pill" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_dg11o")
+
+[node name="SprPill0" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+texture = ExtResource("1_wk3i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bay6c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

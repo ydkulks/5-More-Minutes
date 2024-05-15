@@ -30,13 +30,10 @@ func _on_visibility_changed():
 		#var highscore = GlobalScript.load_game()
 		if old_save == null:
 			GlobalScript.save_game()
-		elif old_save["scores"].has("level"):
-			if int(old_save["scores"][level]["player_score"]) < int(player.text):
+		#else old_save["scores"].has("level"):
+		elif int(old_save["scores"][level]["player_score"]) < int(player.text):
 				get_node("Control/ScoreLabel").set("text","New High Score!:")
 				GlobalScript.save_game()
-		else:
-			get_node("Control/ScoreLabel").set("text","New High Score!:")
-			GlobalScript.save_game()
 
 func save():
 	var save_dict

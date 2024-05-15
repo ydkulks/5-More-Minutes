@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 70.0
+const SPEED = 80.0
 @export var player:CharacterBody2D
 @onready var nav_agent = $NavigationAgent2D as NavigationAgent2D
 enum MODE{CHASE,SCATTER,FRIGHTENED}

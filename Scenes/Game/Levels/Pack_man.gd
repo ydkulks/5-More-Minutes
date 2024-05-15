@@ -7,3 +7,8 @@ func _input(event):
 			get_node("/root/Pack-man/PauseMenu").visible = true
 			get_tree().paused = true
  
+
+
+func _on_timer_timeout():
+	get_tree().paused = true
+	get_node("/root/Pack-man/GameOver").visible = true

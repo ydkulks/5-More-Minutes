@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://co8ecq3btsesh"]
+[gd_scene load_steps=5 format=3 uid="uid://co8ecq3btsesh"]
 
 [ext_resource type="Texture2D" uid="uid://ciexxr50anlbe" path="res://Assets/2D Art/Pack-man/ghost/orange ghost/spr_ghost_orange_0.png" id="1_7xq8x"]
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pack-man/orange.gd" id="1_l6wsn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nixcf"]
 radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gu8y"]
+radius = 77.0
 
 [node name="Orange" type="CharacterBody2D"]
 position = Vector2(224, 227)
@@ -24,11 +27,17 @@ shape = SubResource("CircleShape2D_nixcf")
 
 [node name="Global" type="Timer" parent="."]
 wait_time = 20.0
-autostart = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
-autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7gu8y")
+debug_color = Color(0.772549, 0.301961, 0.811765, 0.419608)
 
 [connection signal="timeout" from="Global" to="." method="_on_global_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

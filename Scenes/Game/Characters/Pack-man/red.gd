@@ -7,7 +7,7 @@ enum MODE{CHASE,SCATTER,FRIGHTENED}
 var current_mode:MODE
 
 func _ready():
-	get_node("Global").set("wait_time",7)
+	get_node("Global").set("wait_time",4)
 	current_mode = MODE.CHASE
 
 func _physics_process(_delta):
@@ -27,8 +27,8 @@ func _on_timer_timeout():
 
 func _on_global_timeout():
 	if current_mode == MODE.CHASE:
-		get_node("Global").set("wait_time",20)
+		get_node("Global").set("wait_time",25)
 		current_mode = MODE.SCATTER
 	elif current_mode == MODE.SCATTER:
-		get_node("Global").set("wait_time",7)
+		get_node("Global").set("wait_time",4)
 		current_mode = MODE.CHASE

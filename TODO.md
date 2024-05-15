@@ -35,11 +35,16 @@
 	- [ ] Enemies
 		- [x] Chase
 		- [x] Scatter
+		- [x] Personality
+            - [x] Red: less Scatter time; more chase time
+            - [x] Pink: Fast
+            - [x] Orange: Leaves ghost house after pack-man collects over a 3rd of pills. Less proximity: Chase. More: Scatter
+            - [x] Blue: Leaves ghost house after pack-man collects 30 pills. Chases after random tiles
 		- [ ] Frightened (Only after eating energizer)
 	- [ ] Collectibles
 		- [ ] Energizer
-		- [ ] Pill
+		- [x] Pill
 		- [ ] Power Pill
 		- [ ] Energizer (HUD)
-	- [ ] Score
+	- [x] Score
 - [ ] Space Invaders

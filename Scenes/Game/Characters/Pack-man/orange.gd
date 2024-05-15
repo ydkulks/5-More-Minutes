@@ -5,6 +5,7 @@ const SPEED = 70.0
 @onready var nav_agent = $NavigationAgent2D as NavigationAgent2D
 enum MODE{CHASE,SCATTER,FRIGHTENED}
 var current_mode:MODE
+var pill_counter:int
 
 func _ready():
 	get_node("Global").set("wait_time",7)
@@ -32,3 +33,21 @@ func _on_global_timeout():
 	elif current_mode == MODE.SCATTER:
 		get_node("Global").set("wait_time",7)
 		current_mode = MODE.CHASE
+
+
+func _on_pills_child_exiting_tree(_node):
+	pill_counter += 1
+	if pill_counter == 5: # 55
+		#print("Blue moves after 30 pills")
+		$Timer.start(0.5)
+		$Global.start(20.0)
+
+
+func _on_area_2d_body_entered(body):
+	if body == player:
+		current_mode = MODE.CHASE
+
+
+func _on_area_2d_body_exited(body):
+	if body == player:
+		current_mode = MODE.SCATTER

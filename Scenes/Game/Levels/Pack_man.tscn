@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://8ah5k4baybhm"]
+[gd_scene load_steps=49 format=3 uid="uid://8ah5k4baybhm"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Pack_man.gd" id="1_11y2p"]
 [ext_resource type="Texture2D" uid="uid://bcndu040atdn1" path="res://Assets/2D Art/Pack-man/background1.png" id="2_7v68f"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://xq1tdi644et" path="res://Scenes/Menu/ready_go.tscn" id="14_dgnrj"]
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="14_vighe"]
 [ext_resource type="Texture2D" uid="uid://btb8llwna55wf" path="res://Assets/2D Art/Pack-man/spr_lifecounter_0.png" id="15_ku6wg"]
+[ext_resource type="PackedScene" uid="uid://ymcl8mylbrrn" path="res://Scenes/Game/Characters/Pack-man/pill.tscn" id="17_xwq7h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_utdeg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -493,6 +494,372 @@ position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_v7oq3")
 one_way_collision = true
 
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Pills" type="Node2D" parent="Collectables"]
+
+[node name="Pill" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(176, 224)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill6" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(256, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill7" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(272, 224)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill8" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(272, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill9" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(296, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill10" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(320, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill2" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(192, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill3" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(176, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill66" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(200, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill67" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(208, 184)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill70" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(200, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill72" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(224, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill73" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(248, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill74" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(272, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill75" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(296, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill76" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(304, 152)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill86" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(304, 128)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill87" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(304, 104)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill88" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(304, 80)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill77" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(272, 144)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill78" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(272, 120)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill79" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(176, 144)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill80" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(176, 120)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill71" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(176, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill81" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(152, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill82" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(144, 152)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill83" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(144, 128)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill84" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(144, 104)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill85" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(144, 80)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill68" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(240, 184)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill69" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(248, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill4" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(151, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill5" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(128, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill11" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(112, 192)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill12" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(112, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill56" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(88, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill57" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(64, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill58" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(48, 175)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill59" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(48, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill60" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(72, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill61" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(80, 216)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill62" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(72, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill63" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(48, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill64" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(96, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill65" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(113, 224)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill13" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(112, 144)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill14" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(112, 120)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill15" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(112, 96)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill16" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(112, 72)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill21" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(336, 192)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill22" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(336, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill46" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(359, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill47" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(384, 168)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill48" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(400, 176)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill49" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(400, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill50" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(376, 200)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill51" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(368, 216)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill52" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(376, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill53" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(400, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill54" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(352, 232)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill55" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(336, 224)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill23" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(336, 144)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill24" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(336, 120)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill25" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(336, 96)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill26" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(336, 72)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill27" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(360, 72)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill28" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(384, 72)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill29" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(400, 64)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill30" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(400, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill31" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(376, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill32" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(352, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill33" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(328, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill34" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(320, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill35" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(296, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill36" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(272, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill37" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(248, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill38" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(224, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill39" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(200, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill40" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(176, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill89" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(176, 79)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill90" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(192, 88)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill41" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(152, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill42" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(128, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill43" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(104, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill44" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(80, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill45" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(56, 40)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill20" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(128, 64)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill17" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(88, 72)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill18" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(64, 72)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill19" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(48, 64)
+scale = Vector2(0.36, 0.36)
+
+[node name="Energizers" type="Node2D" parent="Collectables"]
+
 [node name="Left TP" type="Area2D" parent="."]
 position = Vector2(128, 24)
 script = ExtResource("4_cfeea")
@@ -514,6 +881,7 @@ zoom = Vector2(2.6, 2.6)
 
 [node name="Pack-man" parent="." node_paths=PackedStringArray("red_enemy", "pink_enemy", "orange_enemy", "blue_enemy") instance=ExtResource("2_ttegw")]
 position = Vector2(224, 230)
+collision_layer = 3
 red_enemy = NodePath("../Ghosts/Red")
 pink_enemy = NodePath("../Ghosts/Pink")
 orange_enemy = NodePath("../Ghosts/Orange")
@@ -543,7 +911,7 @@ position = Vector2(224, 122)
 player = NodePath("../../Pack-man")
 
 [node name="Pink" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("9_g4bm7")]
-position = Vector2(203, 144)
+position = Vector2(224, 144)
 player = NodePath("../../Pack-man")
 
 [node name="Orange" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("10_0b1h6")]
@@ -551,7 +919,7 @@ position = Vector2(245, 144)
 player = NodePath("../../Pack-man")
 
 [node name="Blue" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("11_gsw7c")]
-position = Vector2(224, 144)
+position = Vector2(202, 144)
 player = NodePath("../../Pack-man")
 
 [node name="PlayerScore" type="Label" parent="."]
@@ -587,5 +955,13 @@ offset_bottom = 39.0
 
 [node name="GameOver" parent="." instance=ExtResource("7_v6f4n")]
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+autostart = true
+
+[connection signal="child_exiting_tree" from="Collectables/Pills" to="Ghosts/Orange" method="_on_pills_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="Collectables/Pills" to="Ghosts/Blue" method="_on_pills_child_exiting_tree"]
 [connection signal="body_entered" from="Left TP" to="Left TP" method="_on_body_entered"]
 [connection signal="body_entered" from="Right TP" to="Left TP" method="_on_right_tp_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
