@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://8ah5k4baybhm"]
+[gd_scene load_steps=51 format=3 uid="uid://8ah5k4baybhm"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Pack_man.gd" id="1_11y2p"]
 [ext_resource type="Texture2D" uid="uid://bcndu040atdn1" path="res://Assets/2D Art/Pack-man/background1.png" id="2_7v68f"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuge5y2luo3k4" path="res://Assets/2D Art/Pack-man/background2.png" id="3_fonl2"]
 [ext_resource type="Script" path="res://Scenes/Game/Levels/TP.gd" id="4_cfeea"]
 [ext_resource type="Texture2D" uid="uid://cqq17iv70uan1" path="res://Assets/2D Art/Pong/paddle.png" id="6_c3elk"]
+[ext_resource type="PackedScene" uid="uid://clrfffbc775br" path="res://Scenes/Game/Characters/Pack-man/power_pill.tscn" id="6_xowse"]
 [ext_resource type="PackedScene" uid="uid://c5qra4gg2s7ru" path="res://Scenes/Menu/game_over.tscn" id="7_v6f4n"]
 [ext_resource type="PackedScene" uid="uid://c4qh6ysgn072b" path="res://Scenes/Game/Characters/Pack-man/red.tscn" id="8_7bb8x"]
 [ext_resource type="PackedScene" uid="uid://b4xrmayq52a0d" path="res://Scenes/Menu/countdown.tscn" id="9_1a23h"]
@@ -17,6 +18,7 @@
 [ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="14_vighe"]
 [ext_resource type="Texture2D" uid="uid://btb8llwna55wf" path="res://Assets/2D Art/Pack-man/spr_lifecounter_0.png" id="15_ku6wg"]
 [ext_resource type="PackedScene" uid="uid://ymcl8mylbrrn" path="res://Scenes/Game/Characters/Pack-man/pill.tscn" id="17_xwq7h"]
+[ext_resource type="Texture2D" uid="uid://jdhq7bknbitj" path="res://Assets/2D Art/Pack-man/energizer/spr_cherry_0.png" id="19_b4u5w"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_utdeg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -654,10 +656,6 @@ scale = Vector2(0.36, 0.36)
 position = Vector2(48, 200)
 scale = Vector2(0.36, 0.36)
 
-[node name="Pill60" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
-position = Vector2(72, 200)
-scale = Vector2(0.36, 0.36)
-
 [node name="Pill61" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
 position = Vector2(80, 216)
 scale = Vector2(0.36, 0.36)
@@ -718,10 +716,6 @@ scale = Vector2(0.36, 0.36)
 position = Vector2(400, 200)
 scale = Vector2(0.36, 0.36)
 
-[node name="Pill50" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
-position = Vector2(376, 200)
-scale = Vector2(0.36, 0.36)
-
 [node name="Pill51" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
 position = Vector2(368, 216)
 scale = Vector2(0.36, 0.36)
@@ -770,10 +764,6 @@ scale = Vector2(0.36, 0.36)
 position = Vector2(400, 64)
 scale = Vector2(0.36, 0.36)
 
-[node name="Pill30" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
-position = Vector2(400, 40)
-scale = Vector2(0.36, 0.36)
-
 [node name="Pill31" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
 position = Vector2(376, 40)
 scale = Vector2(0.36, 0.36)
@@ -796,6 +786,14 @@ scale = Vector2(0.36, 0.36)
 
 [node name="Pill36" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
 position = Vector2(272, 56)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill45" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(272, 80)
+scale = Vector2(0.36, 0.36)
+
+[node name="Pill50" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
+position = Vector2(256, 88)
 scale = Vector2(0.36, 0.36)
 
 [node name="Pill37" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
@@ -838,10 +836,6 @@ scale = Vector2(0.36, 0.36)
 position = Vector2(80, 40)
 scale = Vector2(0.36, 0.36)
 
-[node name="Pill45" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
-position = Vector2(56, 40)
-scale = Vector2(0.36, 0.36)
-
 [node name="Pill20" parent="Collectables/Pills" instance=ExtResource("17_xwq7h")]
 position = Vector2(128, 64)
 scale = Vector2(0.36, 0.36)
@@ -858,7 +852,30 @@ scale = Vector2(0.36, 0.36)
 position = Vector2(48, 64)
 scale = Vector2(0.36, 0.36)
 
+[node name="PowerPill" parent="Collectables/Pills" instance=ExtResource("6_xowse")]
+position = Vector2(72, 200)
+scale = Vector2(0.56, 0.56)
+
+[node name="PowerPill2" parent="Collectables/Pills" instance=ExtResource("6_xowse")]
+position = Vector2(56, 40)
+scale = Vector2(0.56, 0.56)
+
+[node name="PowerPill3" parent="Collectables/Pills" instance=ExtResource("6_xowse")]
+position = Vector2(400, 40)
+scale = Vector2(0.56, 0.56)
+
+[node name="PowerPill4" parent="Collectables/Pills" instance=ExtResource("6_xowse")]
+position = Vector2(376, 200)
+scale = Vector2(0.56, 0.56)
+
 [node name="Energizers" type="Node2D" parent="Collectables"]
+
+[node name="HUD" type="Node2D" parent="Collectables/Energizers"]
+
+[node name="SprCherry0" type="Sprite2D" parent="Collectables/Energizers/HUD"]
+position = Vector2(392, 14)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("19_b4u5w")
 
 [node name="Left TP" type="Area2D" parent="."]
 position = Vector2(128, 24)
@@ -960,6 +977,7 @@ wait_time = 300.0
 one_shot = true
 autostart = true
 
+[connection signal="child_exiting_tree" from="Collectables/Pills" to="." method="_on_pills_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Collectables/Pills" to="Ghosts/Orange" method="_on_pills_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Collectables/Pills" to="Ghosts/Blue" method="_on_pills_child_exiting_tree"]
 [connection signal="body_entered" from="Left TP" to="Left TP" method="_on_body_entered"]

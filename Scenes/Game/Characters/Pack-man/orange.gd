@@ -37,8 +37,7 @@ func _on_global_timeout():
 
 func _on_pills_child_exiting_tree(_node):
 	pill_counter += 1
-	if pill_counter == 5: # 55
-		#print("Blue moves after 30 pills")
+	if pill_counter == 55: # 55
 		$Timer.start(0.5)
 		$Global.start(20.0)
 

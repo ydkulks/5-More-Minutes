@@ -29,7 +29,6 @@
 		- [x] Death
 			- [x] Reset (2 times)
 			- [x] Death (Game Over)
-			- [ ] Death (Animation)
 	- [x] Map
 		- [x] Teleportration
 	- [ ] Enemies
@@ -41,10 +40,10 @@
             - [x] Orange: Leaves ghost house after pack-man collects over a 3rd of pills. Less proximity: Chase. More: Scatter
             - [x] Blue: Leaves ghost house after pack-man collects 30 pills. Chases after random tiles
 		- [ ] Frightened (Only after eating energizer)
-	- [ ] Collectibles
-		- [ ] Energizer
+	- [x] Collectibles
+		- [x] Energizer
 		- [x] Pill
-		- [ ] Power Pill
-		- [ ] Energizer (HUD)
+		- [x] Power Pill
+		- [x] Energizer (HUD)
 	- [x] Score
 - [ ] Space Invaders

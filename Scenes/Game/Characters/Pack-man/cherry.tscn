@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://do5q4r4l7pq0t"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Characters/Pack-man/cherry.gd" id="1_avo4i"]
+[ext_resource type="Texture2D" uid="uid://jdhq7bknbitj" path="res://Assets/2D Art/Pack-man/energizer/spr_cherry_0.png" id="2_mhuwr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bay6c"]
+radius = 18.0
+
+[node name="Cherry" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_avo4i")
+
+[node name="SprCherry0" type="Sprite2D" parent="."]
+texture = ExtResource("2_mhuwr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bay6c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

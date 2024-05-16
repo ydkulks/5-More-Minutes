@@ -61,3 +61,4 @@ func _on_area_2d_body_entered(body):
 			get_node("/root/Pack-man/Lives/SprLifecounter0").visible = false
 			get_tree().paused = true
 			get_node("/root/Pack-man/GameOver").visible = true
+
