@@ -1,7 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp24vnipwqrwq"]
+[gd_scene load_steps=11 format=3 uid="uid://dp24vnipwqrwq"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pack-man/pink.gd" id="1_7u7v8"]
 [ext_resource type="Texture2D" uid="uid://bwccn4n82ogtw" path="res://Assets/2D Art/Pack-man/ghost/pink ghost/spr_ghost_pink_0.png" id="1_cmka7"]
+[ext_resource type="Texture2D" uid="uid://bwc28ed0xg5of" path="res://Assets/2D Art/Pack-man/ghost/gost afraid/spr_afraid_0.png" id="3_pakmv"]
+[ext_resource type="Texture2D" uid="uid://blfty4ypitv4q" path="res://Assets/2D Art/Pack-man/ghost/gost afraid/spr_afraid_1.png" id="4_jxcs2"]
+[ext_resource type="Texture2D" uid="uid://bew3oguxp813x" path="res://Assets/2D Art/Pack-man/ghost/gost afraid/Ghost_eyes.png" id="5_8yhd7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iltqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dxlb"]
+atlas = ExtResource("1_cmka7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egpam"]
+atlas = ExtResource("5_8yhd7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yk7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dxlb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pakmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jxcs2")
+}],
+"loop": true,
+"name": &"frightened",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egpam")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nixcf"]
 radius = 7.0
@@ -12,10 +55,15 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_7u7v8")
 
-[node name="SprGhostPink0" type="Sprite2D" parent="."]
-position = Vector2(0, -5.96046e-08)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("1_cmka7")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_iltqy")
+debug_color = Color(0.780392, 0.301961, 0.8, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.438895, 0.438895)
+sprite_frames = SubResource("SpriteFrames_8yk7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nixcf")
@@ -30,5 +78,6 @@ autostart = true
 wait_time = 0.5
 autostart = true
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Global" to="." method="_on_global_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

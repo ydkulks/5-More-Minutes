@@ -1,7 +1,3 @@
-<!-- BUG: Unintended invincibility 
-     When ghosts are eaten by pac-man, until ghost reaches house; pac-man is invincible
-     Possible solution: Handle each ghost's state separately
--->
 # Todo
 - [ ] Menu
 	- [x] Title Screen
@@ -26,7 +22,7 @@
 		- [x] Background Music
 		- [x] Ball bounce
 		- [x] Score
-- [ ] Pac-kman
+- [x] Pac-kman
     - [x] Ready-Go pop-up
 	- [x] Pack-man(Player)
 		- [x] 3 lives (HUD)
@@ -35,7 +31,7 @@
 			- [x] Death (Game Over)
 	- [x] Map
 		- [x] Teleportration
-	- [ ] Enemies
+	- [x] Enemies
 		- [x] Chase
 		- [x] Scatter
 		- [x] Personality
@@ -43,15 +39,16 @@
             - [x] Pink: Fast
             - [x] Orange: Leaves ghost house after pack-man collects over a 3rd of pills. Less proximity: Chase. More: Scatter
             - [x] Blue: Leaves ghost house after pack-man collects 30 pills. Chases after random tiles
-		- [ ] Frightened (Only after eating energizer)
+		- [x] Frightened (Only after eating energizer)
             - [x] Red
-            - [ ] Pink
-            - [ ] Orange
-            - [ ] Blue
+            - [x] Pink
+            - [x] Orange
+            - [x] Blue
 	- [x] Collectibles
 		- [x] Energizer
 		- [x] Pill
 		- [x] Power Pill
 		- [x] Energizer (HUD)
 	- [x] Score
+	- [ ] Audio FX
 - [ ] Space Invaders

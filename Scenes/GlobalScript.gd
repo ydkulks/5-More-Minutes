@@ -2,8 +2,6 @@ extends Node
 
 var save_file = "user://5MoreMinutes.save"
 
-var lives = 3 #Pac-man lives counter
-
 var pill_pos:Array = [Vector2(256, 232), Vector2(272, 224), Vector2(272, 200), Vector2(296, 200), 
  Vector2(320, 200), Vector2(336, 192), Vector2(336, 224), Vector2(352, 232), Vector2(376, 232), 
  Vector2(400, 232), Vector2(368, 216), Vector2(376, 200), Vector2(400, 200), Vector2(400, 176), 
@@ -40,6 +38,18 @@ signal pink_mode_changed(new_mode)
 func set_pink_mode(new_mode):
 	pink_mode = new_mode
 	emit_signal("pink_mode_changed", new_mode)
+# Orange ghost states
+var orange_mode:MODE
+signal orange_mode_changed(new_mode)
+func set_orange_mode(new_mode):
+	orange_mode = new_mode
+	emit_signal("orange_mode_changed", new_mode)
+# Blue ghost states
+var blue_mode:MODE
+signal blue_mode_changed(new_mode)
+func set_blue_mode(new_mode):
+	blue_mode = new_mode
+	emit_signal("blue_mode_changed", new_mode)
 
 func save_game():
 	var save_game_file = FileAccess.open(save_file, FileAccess.WRITE)

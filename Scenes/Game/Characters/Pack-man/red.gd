@@ -81,3 +81,5 @@ func _on_area_2d_body_entered(body): #frightened mode death
 	if body == player && current_mode == GlobalScript.MODE.FRIGHTENED:
 		#print("Red: Go to Ghost house")
 		going_home = true
+		var score = get_node("/root/Pack-man/PlayerScore")
+		score.set("text", int(score.text)+500)
