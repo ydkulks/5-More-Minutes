@@ -19,8 +19,9 @@ func _on_timer_timeout():
 
 
 func _on_pills_child_exiting_tree(node):
-	var cherry_time = 80 #When cherry should populate
+	var cherry_time = 5 #When cherry should populate (80)
 	pill_pos.append(node.global_position)
+	GlobalScript.add_pill_pos(node.global_position)
 	pill_counter += 1
 	if pill_counter == cherry_time:
 		var cherry_pos = pill_pos[int(randf_range(0,cherry_time))]

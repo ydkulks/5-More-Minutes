@@ -38,8 +38,10 @@ func _on_global_timeout():
 func _on_pills_child_exiting_tree(_node):
 	pill_counter += 1
 	if pill_counter == 55: # 55
-		$Timer.start(0.5)
-		$Global.start(20.0)
+		get_node("Timer").set("wait_time",0.5)
+		get_node("Global").set("wait_time",20.0)
+		$Timer.start()
+		$Global.start()
 
 
 func _on_area_2d_body_entered(body):

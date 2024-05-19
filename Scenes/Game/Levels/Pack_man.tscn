@@ -456,7 +456,8 @@ texture = ExtResource("3_fonl2")
 3:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rgrar")
 
 [sub_resource type="TileSet" id="TileSet_0bh0e"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_d825w")
 
@@ -923,9 +924,8 @@ texture = ExtResource("15_ku6wg")
 
 [node name="Ghosts" type="Node2D" parent="."]
 
-[node name="Red" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("8_7bb8x")]
+[node name="Red" parent="Ghosts" instance=ExtResource("8_7bb8x")]
 position = Vector2(224, 122)
-player = NodePath("../../Pack-man")
 
 [node name="Pink" parent="Ghosts" node_paths=PackedStringArray("player") instance=ExtResource("9_g4bm7")]
 position = Vector2(224, 144)
@@ -980,6 +980,8 @@ autostart = true
 [connection signal="child_exiting_tree" from="Collectables/Pills" to="." method="_on_pills_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Collectables/Pills" to="Ghosts/Orange" method="_on_pills_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Collectables/Pills" to="Ghosts/Blue" method="_on_pills_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="Collectables/Energizers/HUD" to="Pack-man" method="_on_hud_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="Collectables/Energizers/HUD" to="Ghosts/Red" method="_on_hud_child_exiting_tree"]
 [connection signal="body_entered" from="Left TP" to="Left TP" method="_on_body_entered"]
 [connection signal="body_entered" from="Right TP" to="Left TP" method="_on_right_tp_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

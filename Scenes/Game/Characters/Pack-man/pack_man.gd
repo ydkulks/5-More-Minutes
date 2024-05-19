@@ -11,11 +11,36 @@ const SPEED = 100.0
 @onready var orange_pos = orange_enemy.position
 @onready var pink_pos = pink_enemy.position
 @onready var blue_pos = blue_enemy.position
-var lives = 3
+# Ghost's states
+var red_mode = GlobalScript.red_mode
 
 func _ready():
 	get_tree().paused = true
 	get_node("/root/Pack-man/ReadyGo").visible = true
+	GlobalScript.connect("red_mode_changed", Callable(self , "_on_red_mode_changed"))
+
+func character_reset():
+	position = initial_position
+	red_enemy.position = red_pos
+	pink_enemy.position = pink_pos
+	orange_enemy.position = orange_pos
+	blue_enemy.position = blue_pos
+	# Lives counter
+	GlobalScript.lives = GlobalScript.lives - 1
+	if GlobalScript.lives == 2:
+		get_node("/root/Pack-man/Lives/SprLifecounter2").visible = false
+		# Ready! Go! menu
+		get_tree().paused = true
+		get_node("/root/Pack-man/ReadyGo").visible = true
+	if GlobalScript.lives == 1:
+		get_node("/root/Pack-man/Lives/SprLifecounter1").visible = false
+		# Ready! Go! menu
+		get_tree().paused = true
+		get_node("/root/Pack-man/ReadyGo").visible = true
+	if GlobalScript.lives <= 0:
+		get_node("/root/Pack-man/Lives/SprLifecounter0").visible = false
+		get_tree().paused = true
+		get_node("/root/Pack-man/GameOver").visible = true
 
 func _physics_process(_delta):
 	var direction_x = Input.get_axis("WASD-left", "WASD-right")
@@ -34,31 +59,17 @@ func _physics_process(_delta):
 			anim.play("down")
 		if direction_y < 0:
 			anim.play("up")
-
 	move_and_slide()
 
+func _on_red_mode_changed(new_mode): # reset
+	red_mode = new_mode
 
 func _on_area_2d_body_entered(body):
-	if body==red_enemy || body==pink_enemy || body==orange_enemy || body==blue_enemy:
-		position = initial_position
-		red_enemy.position = red_pos
-		pink_enemy.position = pink_pos
-		orange_enemy.position = orange_pos
-		blue_enemy.position = blue_pos
-		# Lives counter
-		lives = lives - 1
-		if lives == 2:
-			get_node("/root/Pack-man/Lives/SprLifecounter2").visible = false
-			# Ready! Go! menu
-			get_tree().paused = true
-			get_node("/root/Pack-man/ReadyGo").visible = true
-		if lives == 1:
-			get_node("/root/Pack-man/Lives/SprLifecounter1").visible = false
-			# Ready! Go! menu
-			get_tree().paused = true
-			get_node("/root/Pack-man/ReadyGo").visible = true
-		if lives <= 0:
-			get_node("/root/Pack-man/Lives/SprLifecounter0").visible = false
-			get_tree().paused = true
-			get_node("/root/Pack-man/GameOver").visible = true
+	#print("Pac-man",current_mode)
+	if body==red_enemy || body==pink_enemy || body==orange_enemy || body==blue_enemy :
+		# Loop through all the ghost's state
+		if red_mode != GlobalScript.MODE.FRIGHTENED:
+			character_reset()
 
+func _on_hud_child_exiting_tree(_node):
+	GlobalScript.set_red_mode(GlobalScript.MODE.FRIGHTENED)

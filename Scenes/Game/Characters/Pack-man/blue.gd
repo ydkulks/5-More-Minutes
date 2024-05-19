@@ -41,5 +41,7 @@ func _on_pills_child_exiting_tree(_node):
 	pill_counter += 1
 	if pill_counter == 30:
 		#print("Blue moves after 30 pills")
-		$Timer.start(0.5)
-		$Global.start(20.0)
+		get_node("Timer").set("wait_time", 0.5)
+		get_node("Global").set("wait_time", 20.0)
+		$Timer.start()
+		$Global.start()

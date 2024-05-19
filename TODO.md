@@ -1,3 +1,7 @@
+<!-- BUG: Unintended invincibility 
+     When ghosts are eaten by pac-man, until ghost reaches house; pac-man is invincible
+     Possible solution: Handle each ghost's state separately
+-->
 # Todo
 - [ ] Menu
 	- [x] Title Screen
@@ -40,6 +44,10 @@
             - [x] Orange: Leaves ghost house after pack-man collects over a 3rd of pills. Less proximity: Chase. More: Scatter
             - [x] Blue: Leaves ghost house after pack-man collects 30 pills. Chases after random tiles
 		- [ ] Frightened (Only after eating energizer)
+            - [x] Red
+            - [ ] Pink
+            - [ ] Orange
+            - [ ] Blue
 	- [x] Collectibles
 		- [x] Energizer
 		- [x] Pill
