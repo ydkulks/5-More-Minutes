@@ -50,5 +50,5 @@
 		- [x] Power Pill
 		- [x] Energizer (HUD)
 	- [x] Score
-	- [ ] Audio FX
+	- [x] Audio FX
 - [ ] Space Invaders

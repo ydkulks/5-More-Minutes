@@ -1,7 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://drc0s774amq40"]
+[gd_scene load_steps=20 format=3 uid="uid://drc0s774amq40"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Characters/Pack-man/pack_man.gd" id="1_4krtq"]
 [ext_resource type="Texture2D" uid="uid://dphi3etqorkbg" path="res://Assets/2D Art/Pack-man/pacman.png" id="1_dxafu"]
+[ext_resource type="AudioStream" uid="uid://c7a7ksvukwywr" path="res://Assets/Audio/Pac-man/pacman_eatfruit.wav" id="3_olmet"]
+[ext_resource type="AudioStream" uid="uid://m81rhpda2xo2" path="res://Assets/Audio/Pac-man/pacman_eatghost.wav" id="5_0wyom"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_21axm"]
 radius = 7.0
@@ -131,5 +133,11 @@ animation = &"down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_4a68i")
 debug_color = Color(0.831373, 0.278431, 0.694118, 0.419608)
+
+[node name="fruit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_olmet")
+
+[node name="ghost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0wyom")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

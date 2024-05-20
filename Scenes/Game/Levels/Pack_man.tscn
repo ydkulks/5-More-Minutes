@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://8ah5k4baybhm"]
+[gd_scene load_steps=53 format=3 uid="uid://8ah5k4baybhm"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Levels/Pack_man.gd" id="1_11y2p"]
 [ext_resource type="Texture2D" uid="uid://bcndu040atdn1" path="res://Assets/2D Art/Pack-man/background1.png" id="2_7v68f"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://btb8llwna55wf" path="res://Assets/2D Art/Pack-man/spr_lifecounter_0.png" id="15_ku6wg"]
 [ext_resource type="PackedScene" uid="uid://ymcl8mylbrrn" path="res://Scenes/Game/Characters/Pack-man/pill.tscn" id="17_xwq7h"]
 [ext_resource type="Texture2D" uid="uid://jdhq7bknbitj" path="res://Assets/2D Art/Pack-man/energizer/spr_cherry_0.png" id="19_b4u5w"]
+[ext_resource type="AudioStream" uid="uid://d4j7nksxk0kg0" path="res://Assets/Audio/Pac-man/pacman_chomp.wav" id="20_4n80m"]
+[ext_resource type="AudioStream" uid="uid://drfd4l7wa2r88" path="res://Assets/Audio/Pac-man/pacman_beginning.ogg" id="21_tvcst"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_utdeg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -976,6 +978,13 @@ offset_bottom = 39.0
 wait_time = 300.0
 one_shot = true
 autostart = true
+
+[node name="Pill" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_4n80m")
+
+[node name="Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_tvcst")
+autoplay = true
 
 [connection signal="child_exiting_tree" from="Collectables/Pills" to="." method="_on_pills_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Collectables/Pills" to="Ghosts/Orange" method="_on_pills_child_exiting_tree"]

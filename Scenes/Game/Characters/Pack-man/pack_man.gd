@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 70.0
 @export var red_enemy:CharacterBody2D
 @export var pink_enemy:CharacterBody2D
 @export var orange_enemy:CharacterBody2D
@@ -94,7 +94,18 @@ func _on_area_2d_body_entered(body):
 		#print(" Orange:",orange_mode)
 	if body == blue_enemy and blue_mode != FMODE:
 		character_reset()
-		#print("Red:",red_mode," Pink:",pink_mode," Orange:",orange_mode," Blue:",blue_mode)
+	if body == red_enemy and red_mode == FMODE:
+		$ghost.playing = true
+		#print("Red:",red_mode)
+	if body == pink_enemy and pink_mode == FMODE:
+		$ghost.playing = true
+		#print(" Pink:",pink_mode)
+	if body == orange_enemy and orange_mode == FMODE:
+		$ghost.playing = true
+		#print(" Orange:",orange_mode)
+	if body == blue_enemy and blue_mode == FMODE:
+		$ghost.playing = true
 
 func _on_hud_child_exiting_tree(_node):
 	GlobalScript.set_red_mode(GlobalScript.MODE.FRIGHTENED)
+	get_node("fruit").set("playing",true)
