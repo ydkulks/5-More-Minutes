@@ -81,8 +81,8 @@ func _on_pills_child_exiting_tree(_node):
 	if pill_counter == 30: #30
 		get_node("Timer").set("wait_time", 0.5)
 		get_node("Global").set("wait_time", 20.0)
-		$Timer.start()
-		$Global.start()
+		if $Timer.is_inside_tree(): $Timer.start()
+		if $Global.is_inside_tree(): $Global.start()
 
 
 func _on_area_2d_2_body_entered(body):

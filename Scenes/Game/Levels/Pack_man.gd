@@ -19,7 +19,7 @@ func _on_timer_timeout():
 
 
 func _on_pills_child_exiting_tree(node):
-	get_node("Pill").set("playing",true)
+	if $Pill.is_inside_tree(): get_node("Pill").set("playing",true)
 	var cherry_time = 70 #When cherry should populate (80)
 	pill_pos.append(node.global_position)
 	GlobalScript.add_pill_pos(node.global_position)
@@ -30,6 +30,6 @@ func _on_pills_child_exiting_tree(node):
 		$Collectables/Energizers.add_child(cherry_instanced)
 		cherry_instanced.position = cherry_pos
 		cherry_instanced.scale = Vector2(0.5,0.5)
-	if pill_counter >= 92:
-		get_tree().paused = true
+	if pill_counter == 93:
+		if is_inside_tree(): get_tree().set("paused",true)
 		get_node("/root/Pack-man/GameOver").visible = true

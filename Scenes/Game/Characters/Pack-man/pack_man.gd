@@ -95,17 +95,18 @@ func _on_area_2d_body_entered(body):
 	if body == blue_enemy and blue_mode != FMODE:
 		character_reset()
 	if body == red_enemy and red_mode == FMODE:
-		$ghost.playing = true
+		if $ghost.is_inside_tree(): $ghost.playing = true
 		#print("Red:",red_mode)
 	if body == pink_enemy and pink_mode == FMODE:
-		$ghost.playing = true
+		if $ghost.is_inside_tree(): $ghost.playing = true
 		#print(" Pink:",pink_mode)
 	if body == orange_enemy and orange_mode == FMODE:
-		$ghost.playing = true
+		if $ghost.is_inside_tree(): $ghost.playing = true
 		#print(" Orange:",orange_mode)
 	if body == blue_enemy and blue_mode == FMODE:
-		$ghost.playing = true
+		if $ghost.is_inside_tree(): $ghost.playing = true
 
 func _on_hud_child_exiting_tree(_node):
 	GlobalScript.set_red_mode(GlobalScript.MODE.FRIGHTENED)
-	get_node("fruit").set("playing",true)
+	if get_node("fruit").is_inside_tree():
+		get_node("fruit").set("playing",true)
