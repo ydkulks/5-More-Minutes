@@ -52,3 +52,4 @@
 	- [x] Score
 	- [x] Audio FX
 - [ ] Space Invaders
+    - [x] Spaceship

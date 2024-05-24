@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 var game_index = 0
-const games = ["Pong","Pong","Pack_man","Game3"]
+const games = ["Pong","Pong","Pack_man","space_invaders"]
 
 func _select_fx():
 	var selectFX = get_node("/root/5 More Minutes/MainMenu/SelectFX")

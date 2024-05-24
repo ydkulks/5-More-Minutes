@@ -81,7 +81,7 @@ popup/item_1/text = "Pong"
 popup/item_1/id = 1
 popup/item_2/text = "Pac-Man"
 popup/item_2/id = 2
-popup/item_3/text = "Game3"
+popup/item_3/text = "Space Invaders"
 popup/item_3/id = 3
 
 [node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
