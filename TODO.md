@@ -53,3 +53,7 @@
 	- [x] Audio FX
 - [ ] Space Invaders
     - [x] Spaceship
+    - [ ] Alien
+    - [ ] Projectiles
+        - [x] Player bullet
+        - [ ] Enemy bullet

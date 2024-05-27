@@ -3,12 +3,13 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@onready var bullet = load("res://Scenes/Game/Characters/SpaceInvaders/player_bullet.tscn")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity.y += gravity * delta
@@ -26,3 +27,18 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if not get_tree().paused:
+			get_node("/root/SpaceInvaders/PauseMenu").visible = true
+			get_tree().paused = true
+
+
+func _on_timer_timeout():
+	var bullet_pos = global_position
+	var new_bullet = bullet.instantiate()
+	get_node("/root/SpaceInvaders/Bullets").add_child(new_bullet)
+	new_bullet.position = bullet_pos
+	#new_bullet.velocity.y = 100
+	
