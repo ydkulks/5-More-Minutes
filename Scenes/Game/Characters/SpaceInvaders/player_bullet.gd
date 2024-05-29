@@ -12,5 +12,6 @@ func _physics_process(_delta):
 	velocity.y = JUMP_VELOCITY
 	move_and_slide()
 
-func _on_area_2d_body_entered(_body):
-	queue_free()
+func _on_area_2d_body_entered(body):
+	if body != self:
+		queue_free()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://djp4ilpw2eyt1"]
+[gd_scene load_steps=16 format=3 uid="uid://djp4ilpw2eyt1"]
 
 [ext_resource type="Texture2D" uid="uid://bfo2mbqrnuux7" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_Background.png" id="1_lris3"]
 [ext_resource type="Texture2D" uid="uid://bl6mw86gb18t0" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_MockUp.png" id="1_ng2kl"]
 [ext_resource type="Texture2D" uid="uid://bbfua12jh4hhs" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_BackgroundBuildings.png" id="2_ltp7b"]
 [ext_resource type="Texture2D" uid="uid://beyfcxhuy0id3" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_BackgroundFloor.png" id="3_li0x1"]
+[ext_resource type="PackedScene" uid="uid://bxlstoaj8v2in" path="res://Scenes/Game/Characters/SpaceInvaders/alian_regular.tscn" id="4_3exe7"]
 [ext_resource type="PackedScene" uid="uid://ddxev822p0h71" path="res://Scenes/Game/Characters/SpaceInvaders/space_ship.tscn" id="5_s32wb"]
 [ext_resource type="PackedScene" uid="uid://c6nwil2bg6nb0" path="res://Scenes/Menu/pause_menu.tscn" id="6_54cyd"]
 
@@ -121,13 +122,33 @@ collision_mask = 3
 position = Vector2(0, 332)
 shape = SubResource("WorldBoundaryShape2D_frh1n")
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="AlianRegular" parent="Enemies" instance=ExtResource("4_3exe7")]
+position = Vector2(53, 74)
+
+[node name="AlianRegular2" parent="Enemies" instance=ExtResource("4_3exe7")]
+position = Vector2(88, 74)
+
+[node name="AlianRegular3" parent="Enemies" instance=ExtResource("4_3exe7")]
+position = Vector2(119, 74)
+
+[node name="AlianRegular4" parent="Enemies" instance=ExtResource("4_3exe7")]
+position = Vector2(147, 74)
+
+[node name="AlianRegular5" parent="Enemies" instance=ExtResource("4_3exe7")]
+position = Vector2(182, 74)
+
+[node name="AlianRegular6" parent="Enemies" instance=ExtResource("4_3exe7")]
+position = Vector2(213, 74)
+
 [node name="SpaceInvadersMockUp" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(111, 196)
 texture = ExtResource("1_ng2kl")
 
 [node name="SpaceShip" parent="." instance=ExtResource("5_s32wb")]
-position = Vector2(575, 527)
+position = Vector2(574, 572)
 
 [node name="Bullets" type="Node2D" parent="."]
 

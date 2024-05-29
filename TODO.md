@@ -54,6 +54,14 @@
 - [ ] Space Invaders
     - [x] Spaceship
     - [ ] Alien
+        - [x] Alien regular
+        - [ ] Alien pointy squid
+        - [ ] Alien round squid
+        - [ ] Alien skull
+        - [ ] Alien bat
+        - [ ] Alien Spaceship
     - [ ] Projectiles
         - [x] Player bullet
         - [ ] Enemy bullet
+    - [ ] Barricades
+    - [ ] Waves
