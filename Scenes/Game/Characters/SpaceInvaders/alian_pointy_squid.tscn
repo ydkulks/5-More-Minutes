@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2d0dsyg0lc6o"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Characters/SpaceInvaders/alian_pointy_squid.gd" id="1_uu1ty"]
+[ext_resource type="Texture2D" uid="uid://dtfaq7ju5v68o" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders.png" id="1_w641q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipye4"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnqdv"]
+atlas = ExtResource("1_w641q")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asv16"]
+atlas = ExtResource("1_w641q")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahlir"]
+atlas = ExtResource("1_w641q")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr64u"]
+atlas = ExtResource("1_w641q")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmq2d"]
+atlas = ExtResource("1_w641q")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1cn0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnqdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asv16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahlir")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr64u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmq2d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60tar"]
+
+[node name="AlianPointySquid" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_uu1ty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ipye4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e1cn0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_60tar")
+debug_color = Color(0.686275, 0.368627, 0.854902, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -55,11 +55,11 @@
     - [x] Spaceship
     - [ ] Alien
         - [x] Alien regular
-        - [ ] Alien pointy squid
-        - [ ] Alien round squid
-        - [ ] Alien skull
-        - [ ] Alien bat
-        - [ ] Alien Spaceship
+        - [x] Alien pointy squid
+        - [x] Alien round squid
+        - [x] Alien skull
+        - [x] Alien bat
+        - [x] Alien Mothership
     - [ ] Projectiles
         - [x] Player bullet
         - [ ] Enemy bullet

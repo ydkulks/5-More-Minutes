@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 50.0
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
