@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://dtfaq7ju5v68o" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders.png" id="1_ln7tb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsgwc"]
-size = Vector2(1, 6)
+size = Vector2(3.5, 7)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bf7jb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlrsv"]
 atlas = ExtResource("1_ln7tb")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_aq3xi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_c1jnk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bf7jb")
+"texture": SubResource("AtlasTexture_mlrsv")
 }],
 "loop": true,
 "name": &"default",
@@ -22,7 +22,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lq0p"]
-size = Vector2(3, 8)
+size = Vector2(5.5, 9)
 
 [node name="Player_Bullet" type="CharacterBody2D"]
 collision_layer = 2
@@ -35,7 +35,7 @@ shape = SubResource("RectangleShape2D_fsgwc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
-sprite_frames = SubResource("SpriteFrames_aq3xi")
+sprite_frames = SubResource("SpriteFrames_c1jnk")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 50.0
+@onready var alian_bullet = load("res://Scenes/Game/Characters/SpaceInvaders/alian_bullet.tscn")
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
@@ -20,7 +21,7 @@ func _on_area_2d_body_entered(body):
 	var bullets_node = get_node("/root/SpaceInvaders/Bullets")
 	var bullet_count = bullets_node.get_child_count()
 	if bullet_count > 0:
-		#print("Has children of bullets")
+		#print("mothership: Has children of bullets")
 		for child in bullets_node.get_children():
 			if body == child:
 				set_collision_layer_value(1,true)
@@ -31,3 +32,10 @@ func _on_area_2d_body_entered(body):
 
 func _on_timer_timeout():
 	queue_free()
+
+
+func _on_shoot_timeout():
+	var alian_bullet_pos = global_position
+	var new_alian_bullet = alian_bullet.instantiate()
+	get_node("/root/SpaceInvaders/AlianBullets").add_child(new_alian_bullet)
+	new_alian_bullet.position = alian_bullet_pos

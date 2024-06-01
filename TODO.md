@@ -53,15 +53,19 @@
 	- [x] Audio FX
 - [ ] Space Invaders
     - [x] Spaceship
-    - [ ] Alien
+        - [ ] Lives
+        - [x] Game Over
+    - [x] Alien
         - [x] Alien regular
         - [x] Alien pointy squid
         - [x] Alien round squid
         - [x] Alien skull
         - [x] Alien bat
-        - [x] Alien Mothership
+        - [x] Alien Mother-ship
     - [ ] Projectiles
         - [x] Player bullet
         - [ ] Enemy bullet
+            - [ ] All enemy bullets
+            - [ ] Both the types (straight and diagonal)
     - [ ] Barricades
     - [ ] Waves

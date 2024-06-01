@@ -6,8 +6,10 @@ var old_save = GlobalScript.load_game()
 func _ready():
 	if level == "/root/Pong":
 		level = "pong"
-	elif level == "/root/Pack-man":
+	if level == "/root/Pack-man":
 		level = "packman"
+	if level == "/root/SpaceInvaders":
+		level = "spaceinvaders"
 
 func _on_play_again_pressed():
 	get_tree().paused = false
@@ -42,7 +44,7 @@ func save():
 			"scores":{
 				"pong" : {"player_score" : 0},
 				"packman" : {"player_score":0},
-				"game3":{"player_score":0}
+				"spaceinvaders":{"player_score":0}
 			}
 		}
 		save_dict["scores"][level].player_score = int(get_node("Control/Score").text)

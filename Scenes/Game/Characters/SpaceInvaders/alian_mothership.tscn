@@ -47,8 +47,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1xq"]
-size = Vector2(20, 14)
+[sub_resource type="CircleShape2D" id="CircleShape2D_n621x"]
 
 [node name="AlianMothership" type="CharacterBody2D"]
 collision_layer = 2
@@ -66,11 +65,16 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_bo1xq")
+shape = SubResource("CircleShape2D_n621x")
 debug_color = Color(0.717647, 0.345098, 0.847059, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Shoot" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Shoot" to="." method="_on_shoot_timeout"]

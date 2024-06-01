@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://djp4ilpw2eyt1"]
+[gd_scene load_steps=23 format=3 uid="uid://djp4ilpw2eyt1"]
 
+[ext_resource type="Script" path="res://Scenes/Game/Levels/space_invaders.gd" id="1_a66xv"]
 [ext_resource type="Texture2D" uid="uid://bfo2mbqrnuux7" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_Background.png" id="1_lris3"]
 [ext_resource type="Texture2D" uid="uid://bl6mw86gb18t0" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_MockUp.png" id="1_ng2kl"]
 [ext_resource type="Texture2D" uid="uid://bbfua12jh4hhs" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_BackgroundBuildings.png" id="2_ltp7b"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://jywkhkx3kx0g" path="res://Scenes/Game/Characters/SpaceInvaders/alian_skull.tscn" id="7_yunug"]
 [ext_resource type="PackedScene" uid="uid://elnlxld1m2uu" path="res://Scenes/Game/Characters/SpaceInvaders/alian_bat.tscn" id="8_jeuhe"]
 [ext_resource type="PackedScene" uid="uid://bmn61mjisxdl5" path="res://Scenes/Game/Characters/SpaceInvaders/alian_mothership.tscn" id="9_o6o3r"]
+[ext_resource type="PackedScene" uid="uid://c5qra4gg2s7ru" path="res://Scenes/Menu/game_over.tscn" id="14_8wdai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqneb"]
 texture = ExtResource("1_lris3")
@@ -79,6 +81,7 @@ distance = 15.0
 normal = Vector2(1, 0)
 
 [node name="SpaceInvaders" type="Node2D"]
+script = ExtResource("1_a66xv")
 
 [node name="Sky" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_51m3d")
@@ -159,4 +162,24 @@ position = Vector2(574, 572)
 
 [node name="Bullets" type="Node2D" parent="."]
 
+[node name="AlianBullets" type="Node2D" parent="."]
+
+[node name="PlayerScore" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 53.0
+text = "1"
+
+[node name="ComputerScore" type="Label" parent="."]
+offset_left = 131.0
+offset_top = 35.0
+offset_right = 171.0
+offset_bottom = 58.0
+text = "o"
+
 [node name="PauseMenu" parent="." instance=ExtResource("6_54cyd")]
+
+[node name="GameOver" parent="." instance=ExtResource("14_8wdai")]
+
+[connection signal="tree_exited" from="SpaceShip" to="." method="_on_space_ship_tree_exited"]

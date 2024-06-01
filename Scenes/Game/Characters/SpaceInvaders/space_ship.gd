@@ -28,12 +28,6 @@ func _physics_process(_delta):
 
 	move_and_slide()
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		if not get_tree().paused:
-			get_node("/root/SpaceInvaders/PauseMenu").visible = true
-			get_tree().paused = true
-
 
 func _on_timer_timeout():
 	var bullet_pos = global_position
@@ -42,3 +36,8 @@ func _on_timer_timeout():
 	new_bullet.position = bullet_pos
 	#new_bullet.velocity.y = 100
 	
+
+func _on_area_2d_body_entered(body):
+	# Add 3 lives
+	if body != self:
+		queue_free()
