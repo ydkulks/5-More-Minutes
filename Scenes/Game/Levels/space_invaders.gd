@@ -10,4 +10,5 @@ func _input(event):
 
 func _on_space_ship_tree_exited():
 	$GameOver.visible = true
-	get_tree().paused = true
+	if $PauseMenu.visible != true:
+		get_tree().paused = true

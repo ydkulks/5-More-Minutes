@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgnb64aj6estl"]
+[gd_scene load_steps=7 format=3 uid="uid://c5h25udsoo5ro"]
 
-[ext_resource type="Texture2D" uid="uid://dtfaq7ju5v68o" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders.png" id="1_8dwwx"]
-[ext_resource type="Script" path="res://Scenes/Game/Characters/SpaceInvaders/alian_bullet.gd" id="1_ukvtp"]
+[ext_resource type="Texture2D" uid="uid://dtfaq7ju5v68o" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders.png" id="1_sddbo"]
+[ext_resource type="Script" path="res://Scenes/Game/Characters/SpaceInvaders/alian_bullet_left.gd" id="1_ua22l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsgwc"]
 size = Vector2(3.5, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3gi4"]
-atlas = ExtResource("1_8dwwx")
+atlas = ExtResource("1_sddbo")
 region = Rect2(80, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aq3xi"]
@@ -24,10 +24,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lq0p"]
 size = Vector2(5.5, 9)
 
-[node name="Alian_Bullet" type="CharacterBody2D"]
+[node name="Alian_Bullet_Left" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_ukvtp")
+script = ExtResource("1_ua22l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.75, 10)

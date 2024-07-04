@@ -65,7 +65,8 @@
     - [ ] Projectiles
         - [x] Player bullet
         - [ ] Enemy bullet
-            - [ ] All enemy bullets
-            - [ ] Both the types (straight and diagonal)
+            - [x] All enemy bullets
+            - [x] Both the types (straight and diagonal)
+			- [ ] Random interval
     - [ ] Barricades
     - [ ] Waves

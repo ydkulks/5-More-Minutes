@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 50.0
+const SPEED = 20.0
 @onready var alian_bullet = load("res://Scenes/Game/Characters/SpaceInvaders/alian_bullet.tscn")
+@onready var alian_bullet_right = load("res://Scenes/Game/Characters/SpaceInvaders/alian_bullet_right.tscn")
+@onready var alian_bullet_left = load("res://Scenes/Game/Characters/SpaceInvaders/alian_bullet_left.tscn")
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
@@ -36,6 +38,13 @@ func _on_timer_timeout():
 
 func _on_shoot_timeout():
 	var alian_bullet_pos = global_position
-	var new_alian_bullet = alian_bullet.instantiate()
+	var space_ship_pos = get_node("/root/SpaceInvaders/SpaceShip").global_position
+	var new_alian_bullet
+	if space_ship_pos == alian_bullet_pos:
+		new_alian_bullet = alian_bullet.instantiate()
+	elif space_ship_pos > alian_bullet_pos:
+		new_alian_bullet = alian_bullet_right.instantiate()
+	else:
+		new_alian_bullet = alian_bullet_left.instantiate()
 	get_node("/root/SpaceInvaders/AlianBullets").add_child(new_alian_bullet)
 	new_alian_bullet.position = alian_bullet_pos

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://djp4ilpw2eyt1"]
+[gd_scene load_steps=24 format=3 uid="uid://djp4ilpw2eyt1"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Levels/space_invaders.gd" id="1_a66xv"]
 [ext_resource type="Texture2D" uid="uid://bfo2mbqrnuux7" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders_Background.png" id="1_lris3"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://jywkhkx3kx0g" path="res://Scenes/Game/Characters/SpaceInvaders/alian_skull.tscn" id="7_yunug"]
 [ext_resource type="PackedScene" uid="uid://elnlxld1m2uu" path="res://Scenes/Game/Characters/SpaceInvaders/alian_bat.tscn" id="8_jeuhe"]
 [ext_resource type="PackedScene" uid="uid://bmn61mjisxdl5" path="res://Scenes/Game/Characters/SpaceInvaders/alian_mothership.tscn" id="9_o6o3r"]
+[ext_resource type="FontFile" uid="uid://7kk4yqg6nmxs" path="res://Assets/m5x7.ttf" id="13_06j58"]
 [ext_resource type="PackedScene" uid="uid://c5qra4gg2s7ru" path="res://Scenes/Menu/game_over.tscn" id="14_8wdai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqneb"]
@@ -98,24 +99,24 @@ metadata/_edit_lock_ = true
 [node name="Border" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Border"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 251
+collision_mask = 251
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D"]
 position = Vector2(574, 665)
 shape = SubResource("RectangleShape2D_omrvw")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Border"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 251
+collision_mask = 251
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D2"]
 position = Vector2(577, -14)
 shape = SubResource("RectangleShape2D_omrvw")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Border"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 251
+collision_mask = 251
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D3"]
 position = Vector2(865, 318)
@@ -124,8 +125,8 @@ shape = SubResource("WorldBoundaryShape2D_s5fhu")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Border"]
 position = Vector2(275, 4)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 251
+collision_mask = 251
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D4"]
 position = Vector2(0, 332)
@@ -165,17 +166,21 @@ position = Vector2(574, 572)
 [node name="AlianBullets" type="Node2D" parent="."]
 
 [node name="PlayerScore" type="Label" parent="."]
-offset_left = 40.0
-offset_top = 30.0
-offset_right = 80.0
-offset_bottom = 53.0
+offset_left = 20.0
+offset_top = 35.0
+offset_right = 60.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("13_06j58")
+theme_override_font_sizes/font_size = 50
 text = "1"
 
 [node name="ComputerScore" type="Label" parent="."]
-offset_left = 131.0
-offset_top = 35.0
-offset_right = 171.0
-offset_bottom = 58.0
+offset_left = 876.0
+offset_top = 51.0
+offset_right = 916.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("13_06j58")
+theme_override_font_sizes/font_size = 50
 text = "o"
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_54cyd")]
