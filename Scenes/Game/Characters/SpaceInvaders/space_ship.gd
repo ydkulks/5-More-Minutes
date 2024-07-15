@@ -21,21 +21,19 @@ func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("WASD-left", "WASD-right")
+	var shoot = Input.is_action_just_pressed("ui_accept")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if shoot:
+		var bullet_pos = global_position
+		var new_bullet = bullet.instantiate()
+		get_node("/root/SpaceInvaders/Bullets").add_child(new_bullet)
+		new_bullet.position = bullet_pos
 
 	move_and_slide()
-
-
-func _on_timer_timeout():
-	var bullet_pos = global_position
-	var new_bullet = bullet.instantiate()
-	get_node("/root/SpaceInvaders/Bullets").add_child(new_bullet)
-	new_bullet.position = bullet_pos
-	#new_bullet.velocity.y = 100
-	
 
 func _on_area_2d_body_entered(body):
 	# Add 3 lives

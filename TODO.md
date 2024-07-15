@@ -64,9 +64,11 @@
         - [x] Alien Mother-ship
     - [ ] Projectiles
         - [x] Player bullet
-        - [ ] Enemy bullet
+        - [x] Player bullet controle
+        - [x] Enemy bullet
             - [x] All enemy bullets
             - [x] Both the types (straight and diagonal)
-			- [ ] Random interval
+            - [x] Random interval
     - [ ] Barricades
     - [ ] Waves
+        - [ ] Speed tune

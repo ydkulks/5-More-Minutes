@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const BULLET_VELOCITY = 50.0
+const BULLET_VELOCITY = 150.0
 
 
 func _physics_process(_delta):

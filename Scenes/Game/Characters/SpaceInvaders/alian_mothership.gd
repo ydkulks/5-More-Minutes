@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 20.0
+const SPEED = 100.0
 @onready var alian_bullet = load("res://Scenes/Game/Characters/SpaceInvaders/alian_bullet.tscn")
 @onready var alian_bullet_right = load("res://Scenes/Game/Characters/SpaceInvaders/alian_bullet_right.tscn")
 @onready var alian_bullet_left = load("res://Scenes/Game/Characters/SpaceInvaders/alian_bullet_left.tscn")
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
+	$Shoot.start(randf_range(1,20))
 
 func _physics_process(_delta):
 	velocity.x = 1 * SPEED
@@ -16,9 +17,9 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body == get_node("/root/SpaceInvaders/Border/StaticBody2D3"):
-		var current_pos = position
+		#var current_pos = position
 		position.x = 14
-		position.y = current_pos.y + 25
+		#position.y = current_pos.y + 25
 	
 	var bullets_node = get_node("/root/SpaceInvaders/Bullets")
 	var bullet_count = bullets_node.get_child_count()
@@ -48,3 +49,4 @@ func _on_shoot_timeout():
 		new_alian_bullet = alian_bullet_left.instantiate()
 	get_node("/root/SpaceInvaders/AlianBullets").add_child(new_alian_bullet)
 	new_alian_bullet.position = alian_bullet_pos
+	$Shoot.start(randf_range(1,20))
