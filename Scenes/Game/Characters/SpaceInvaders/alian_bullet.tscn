@@ -25,8 +25,8 @@ animations = [{
 size = Vector2(5.5, 9)
 
 [node name="Alian_Bullet" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 260
+collision_mask = 260
 script = ExtResource("1_ukvtp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

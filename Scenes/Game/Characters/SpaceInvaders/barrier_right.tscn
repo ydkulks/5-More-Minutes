@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7l0admk8usfe"]
+
+[ext_resource type="Texture2D" uid="uid://dtfaq7ju5v68o" path="res://Assets/2D Art/SpaceInvader/SpaceInvaders.png" id="1_t5peq"]
+[ext_resource type="Script" path="res://Scenes/Game/Characters/SpaceInvaders/barrier_right.gd" id="2_7f4wi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po0tg"]
+atlas = ExtResource("1_t5peq")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vs6h"]
+atlas = ExtResource("1_t5peq")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r2dr"]
+atlas = ExtResource("1_t5peq")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2amh1"]
+atlas = ExtResource("1_t5peq")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1uuyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po0tg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vs6h")
+}],
+"loop": true,
+"name": &"oneHit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r2dr")
+}],
+"loop": true,
+"name": &"threeHit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2amh1")
+}],
+"loop": true,
+"name": &"twoHit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkil3"]
+size = Vector2(13, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbx2r"]
+size = Vector2(16.5, 22)
+
+[node name="Barrier_right" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1uuyu")
+script = ExtResource("2_7f4wi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, 2)
+shape = SubResource("RectangleShape2D_xkil3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.25, 3)
+shape = SubResource("RectangleShape2D_vbx2r")
+debug_color = Color(0.744915, 0.335426, 0.80872, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

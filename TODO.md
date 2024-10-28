@@ -23,7 +23,7 @@
 		- [x] Ball bounce
 		- [x] Score
 - [x] Pac-kman
-    - [x] Ready-Go pop-up
+	- [x] Ready-Go pop-up
 	- [x] Pack-man(Player)
 		- [x] 3 lives (HUD)
 		- [x] Death
@@ -35,15 +35,15 @@
 		- [x] Chase
 		- [x] Scatter
 		- [x] Personality
-            - [x] Red: less Scatter time; more chase time
-            - [x] Pink: Fast
-            - [x] Orange: Leaves ghost house after pack-man collects over a 3rd of pills. Less proximity: Chase. More: Scatter
-            - [x] Blue: Leaves ghost house after pack-man collects 30 pills. Chases after random tiles
+			- [x] Red: less Scatter time; more chase time
+			- [x] Pink: Fast
+			- [x] Orange: Leaves ghost house after pack-man collects over a 3rd of pills. Less proximity: Chase. More: Scatter
+			- [x] Blue: Leaves ghost house after pack-man collects 30 pills. Chases after random tiles
 		- [x] Frightened (Only after eating energizer)
-            - [x] Red
-            - [x] Pink
-            - [x] Orange
-            - [x] Blue
+			- [x] Red
+			- [x] Pink
+			- [x] Orange
+			- [x] Blue
 	- [x] Collectibles
 		- [x] Energizer
 		- [x] Pill
@@ -52,23 +52,23 @@
 	- [x] Score
 	- [x] Audio FX
 - [ ] Space Invaders
-    - [x] Spaceship
-        - [ ] Lives
-        - [x] Game Over
-    - [x] Alien
-        - [x] Alien regular
-        - [x] Alien pointy squid
-        - [x] Alien round squid
-        - [x] Alien skull
-        - [x] Alien bat
-        - [x] Alien Mother-ship
-    - [ ] Projectiles
-        - [x] Player bullet
-        - [x] Player bullet controle
-        - [x] Enemy bullet
-            - [x] All enemy bullets
-            - [x] Both the types (straight and diagonal)
-            - [x] Random interval
-    - [ ] Barricades
-    - [ ] Waves
-        - [ ] Speed tune
+	- [x] Spaceship
+		- [ ] Lives
+		- [x] Game Over
+	- [x] Alien
+		- [x] Alien regular
+		- [x] Alien pointy squid
+		- [x] Alien round squid
+		- [x] Alien skull
+		- [x] Alien bat
+		- [x] Alien Mother-ship
+	- [x] Projectiles
+		- [x] Player bullet
+		- [x] Player bullet controle
+		- [x] Enemy bullet
+			- [x] All enemy bullets
+			- [x] Both the types (straight and diagonal)
+			- [x] Random interval
+	- [x] Barricades
+	- [ ] Waves
+		- [ ] Speed tune

@@ -22,11 +22,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lq0p"]
-size = Vector2(5.5, 9)
+size = Vector2(5, 8)
 
 [node name="Player_Bullet" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 258
+collision_mask = 258
 script = ExtResource("1_824el")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
